@@ -22,7 +22,7 @@ public class NavMeshAgentEnemy : MonoBehaviour
     {
         enemy.destination = player.transform.position;
         nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
-        if(distanceToAtack <= nowdistance)
+        if(distanceToAtack >= nowdistance)
         {
             Debug.Log("TOO CLOSE ATACK");
         }
