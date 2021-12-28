@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -10,12 +11,16 @@ public class EnemyMovement : MonoBehaviour
      public float MinDistanceToMoveTowardPlayer = 5;
     private int speed;
     private WaveManager parent;
+    public float maxHealth;
+    float health;
+    public Image healthFill;
  
  
  
  
      void Start()
      {
+        health = maxHealth;
         speed = (int)Random.Range(RandomSpeedBase - 2, RandomSpeedBase + 5);
         parent = transform.parent.GetComponent<WaveManager>();
  
@@ -38,12 +43,26 @@ public class EnemyMovement : MonoBehaviour
              }
  
          }
-     }
+
+        healthFill.fillAmount = health / maxHealth;
+    }
 
 
-    public void IWillDieable()
+    public void IWillDieable(float damageToTake)
     {
-        parent.RemoveEnemy();
-        Destroy(this.gameObject);
+        if(health > 0)
+        {
+            health = health - damageToTake;
+            if(health <= 0)
+            {
+                parent.RemoveEnemy();
+                Destroy(this.gameObject);
+            }
+
+        } else
+        {
+            parent.RemoveEnemy();
+            Destroy(this.gameObject);
+        }
     }
 } 

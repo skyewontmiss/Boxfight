@@ -11,9 +11,14 @@ public class TargetShooter : Gun
     [SerializeField] string IGunNameable;
     [SerializeField] AudioSource reloadSound;
     [SerializeField] float cooldown, reloadCooldown, cameraAimMinimum, cameraAimSpeed;
+    [SerializeField] public TMP_Text gunText, currentAmmoText, maxAmmoText;
+    int currentAmmo;
+    public int maxAmmo;
     [SerializeField] int myItemIndex;
     public bool isAiming;
     [SerializeField] AudioClip gunSFX;
+    LocalController playerController;
+    public int damageIGive;
 
 
 
@@ -22,6 +27,8 @@ public class TargetShooter : Gun
 
     void Awake()
     {
+        playerController = myPlayer.GetComponent<LocalController>();
+        currentAmmo = maxAmmo;
     }
 
     public void RefreshCamera(int FOV)
@@ -31,12 +38,12 @@ public class TargetShooter : Gun
 
     private void Start()
     {
-        RefreshCamera(PlayerPrefs.GetInt("FOV"));
+        RefreshCamera(60);
     }
 
     public override void Use()
     {
-        if (timer >= cooldown)
+        if (timer >= cooldown && currentAmmo > 0)
         {
             Shoot();
             timer = 0f;
@@ -55,18 +62,47 @@ public class TargetShooter : Gun
 
 
 
-        if (Input.GetKey(KeyCode.Mouse1))
+        if (myItemIndex == playerController.globalIndex)
         {
-            if (cam.fieldOfView > cameraAimMinimum)
+            gunText.text = IGunNameable;
+            maxAmmoText.text = maxAmmo.ToString();
+            currentAmmoText.text = currentAmmo.ToString();
+            Reload();
+            if (!playerController.paused)
             {
-                cam.fieldOfView -= cameraAimSpeed;
 
+                if (Input.GetKey(KeyCode.Mouse1))
+                {
+                    if (cam.fieldOfView > cameraAimMinimum)
+                    {
+                        cam.fieldOfView -= cameraAimSpeed;
+                        playerController.isAiming = true;
+
+                    }
+
+                }
+                else if (cam.fieldOfView < cameraAimMaximum)
+                {
+                    cam.fieldOfView += cameraAimSpeed;
+                    playerController.isAiming = false;
+                }
             }
 
         }
-        else if (cam.fieldOfView < cameraAimMaximum)
+
+
+    }
+
+    void Reload()
+    {
+        if (Input.GetKey(KeyCode.R) && currentAmmo != maxAmmo)
         {
-            cam.fieldOfView += cameraAimSpeed;
+            if (timer > reloadCooldown)
+            {
+                currentAmmo += 1;
+                timer = 0f;
+                reloadSound.Play();
+            }
         }
     }
 
@@ -113,13 +149,15 @@ public class TargetShooter : Gun
             if (Enemy != null)
             {
                 crosshairAnimator.Play("ARShoot", 0, 0f);
-                Enemy.IWillDieable();
+                Enemy.IWillDieable(damageIGive);
                 RPC_ShootWithImpacts(hit.point, hit.normal);
+                currentAmmo = currentAmmo - 1;
             }
             else
             {
                 crosshairAnimator.Play("ARShoot", 0, 0f);
                 RPC_ShootNoImpacts(hit.point, hit.normal);
+                currentAmmo = currentAmmo - 1;
             }
         }
     }
