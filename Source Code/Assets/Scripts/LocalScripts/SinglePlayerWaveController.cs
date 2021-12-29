@@ -27,6 +27,10 @@ public class SinglePlayerWaveController : MonoBehaviour
 
     public void NextWave()
     {
+        if(waveIndex == 0)
+        {
+            AchievementManager.instance.AchievementGet("Slayer");
+        }
         RefreshWaves();
         waveIndex += 1;
         Waves[waveIndex].SetActive(true);
