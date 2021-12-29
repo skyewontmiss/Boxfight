@@ -189,7 +189,7 @@ public class MyOptionsMenu : MonoBehaviour
         else
         {
             cameraFOVSlider.value = 60;
-            PlayerPrefs.SetFloat("Mouse", cameraFOVSlider.value);
+            PlayerPrefs.SetFloat("FOV", cameraFOVSlider.value);
             PlayerPrefs.Save();
         }
 

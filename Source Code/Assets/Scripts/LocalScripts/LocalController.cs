@@ -144,6 +144,13 @@ public class LocalController : MonoBehaviour
         if (PlayerPrefs.HasKey("FOV"))
         {
             myCamera.fieldOfView = PlayerPrefs.GetInt("FOV");
+            if (mySingleShotguns != null)
+            {
+                foreach (TargetShooter shooter in mySingleShotguns)
+                {
+                    shooter.RefreshCamera((int)myCamera.fieldOfView);
+                }
+            }
 
         } else
         {
@@ -172,14 +179,6 @@ public class LocalController : MonoBehaviour
             foreach (WeaponSway weaponSway in myWeaponSways)
             {
                 weaponSway.sensitivity = mouseSensitivity;
-            }
-        }
-
-        if (myWeaponSways != null)
-        {
-            foreach (TargetShooter shooter in mySingleShotguns)
-            {
-                shooter.RefreshCamera((int) myCamera.fieldOfView);
             }
         }
 

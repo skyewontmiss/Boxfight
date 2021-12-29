@@ -11,7 +11,8 @@ public class EnemyMovement : MonoBehaviour
     public float maxHealth;
     float health;
     public Image healthFill;
-    public GameObject player;
+    public GameObject firstPerson, thirdPerson;
+    GameObject player;
     public NavMeshAgent enemy;
     public float distanceToAttack;
     public float nowdistance;
@@ -22,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (distanceToAttack >= nowdistance)
         {   
-            Debug.Log("TOO CLOSE ATACK");
+            Debug.Log("I am close to the player. I am stopping advancing.");
 
         } else
         {
@@ -38,10 +39,70 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
      {
+
         health = maxHealth;
         parent = transform.parent.GetComponent<WaveManager>();
+        if (PlayerPrefs.HasKey("Camera Mode"))
+        {
+            if (PlayerPrefs.GetInt("Camera Mode") == 0)
+            {
+                Destroy(firstPerson);
+                firstPerson = null;
+            }
+            else if (PlayerPrefs.GetInt("Camera Mode") == 1)
+            {
+                Destroy(thirdPerson);
+                thirdPerson = null;
+            }
+
+        }
+        else
+        {
+            Destroy(firstPerson);
+            firstPerson = null;
+        }
+
+        if (thirdPerson == null)
+        {
+            player = firstPerson;
+
+        }
+        else if (firstPerson == null)
+        {
+            player = thirdPerson;
+
+        }
+        else if (thirdPerson != null && firstPerson != null)
+        {
+            Debug.LogWarning("Too many players avaliable to track only 1.");
+        }
+        else 
+        {
+            Debug.LogWarning("No avaliable players to track.");
+        }
         nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
+    }
+
+    void LoadSettings()
+    {
+        if (PlayerPrefs.HasKey("Camera Mode"))
+        {
+            if (PlayerPrefs.GetInt("Camera Mode") == 0)
+            {
+                Destroy(firstPerson);
+
+            }
+            else if (PlayerPrefs.GetInt("Camera Mode") == 1)
+            {
+                Destroy(thirdPerson);
+            }
+
+        }
+        else
+        {
+            Destroy(firstPerson);
+        }
     }
 
 

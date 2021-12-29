@@ -38,7 +38,7 @@ public class TargetShooter : Gun
 
     private void Start()
     {
-        RefreshCamera(60);
+        RefreshCamera(PlayerPrefs.GetInt("FOV"));
     }
 
     public override void Use()
