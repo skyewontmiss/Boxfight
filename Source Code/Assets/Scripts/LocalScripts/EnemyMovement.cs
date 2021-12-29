@@ -1,51 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class EnemyMovement : MonoBehaviour
 {
-     public Transform Player;
-     public float RandomSpeedBase = 4;
-     public float MaxDistanceToStopMovingTowardPlayer = 10;
-     public float MinDistanceToMoveTowardPlayer = 5;
-    private int speed;
+    public int speed = 2;
     private WaveManager parent;
     public float maxHealth;
     float health;
     public Image healthFill;
- 
- 
- 
- 
-     void Start()
-     {
-        health = maxHealth;
-        speed = (int)Random.Range(RandomSpeedBase - 2, RandomSpeedBase + 5);
-        parent = transform.parent.GetComponent<WaveManager>();
- 
-     }
- 
-     void Update()
-     {
-         transform.LookAt(Player);
- 
-         if (Vector3.Distance(transform.position, Player.position) >= MinDistanceToMoveTowardPlayer)        
+    public GameObject player;
+    public NavMeshAgent enemy;
+    public float distanceToAttack;
+    public float nowdistance;
+    // Start is called before the first frame update
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (distanceToAttack >= nowdistance)
+        {   
+            Debug.Log("TOO CLOSE ATACK");
+
+        } else
         {
+            //makes sure NavMeshAgent doesn't go past the nowDistance if we are too close to the player
+            enemy.destination = player.transform.position;
+            nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
-            transform.position += transform.forward * speed * Time.deltaTime;
- 
- 
- 
-             if (Vector3.Distance(transform.position, Player.position) <= MaxDistanceToStopMovingTowardPlayer)
-             {
-                 //Here Call any function U want Like Shoot at here or something
-             }
- 
-         }
-
+        }
         healthFill.fillAmount = health / maxHealth;
     }
+
+
+
+    void Start()
+     {
+        health = maxHealth;
+        parent = transform.parent.GetComponent<WaveManager>();
+        nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
+
+    }
+
 
 
     public void IWillDieable(float damageToTake)
