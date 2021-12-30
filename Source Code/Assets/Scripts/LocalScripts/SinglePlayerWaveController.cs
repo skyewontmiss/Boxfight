@@ -29,7 +29,10 @@ public class SinglePlayerWaveController : MonoBehaviour
     {
         if(waveIndex == 0)
         {
-            AchievementManager.instance.AchievementGet("Slayer");
+            if(AchievementManager.instance != null)
+            {
+                AchievementManager.instance.AchievementGet("Slayer");
+            }
         }
         RefreshWaves();
         waveIndex += 1;

@@ -8,7 +8,6 @@ public class AchievementManager : MonoBehaviour
     public static AchievementManager instance;
     public TMP_Text achievementNameText, achievementDescriptionText;
     public GameObject myself;
-    float timer;
 
     void Start()
     {
@@ -19,27 +18,28 @@ public class AchievementManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
         instance = this;
+        myself.SetActive(false);
     }
 
     // Update is called once per frame
     public void AchievementGet(string achievementName)
     {
-        timer = 0;
-        if(achievementName == "Slayer")
+        StartCoroutine(AchievementAnimate("Slayer"));
+    }
+
+    IEnumerator AchievementAnimate (string achievementName)
+    {
+        if (achievementName == "Slayer")
         {
             achievementNameText.text = "Slayer";
             achievementDescriptionText.text = "Complete a full wave of the Single Player Campaign. No sweat.";
             myself.SetActive(true);
-
-        }
-    }
-
-    private void Update()
-    {
-        timer += Time.deltaTime;
-        if (timer > 5f)
-        {
+            yield return new WaitForSeconds(4f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1.75f);
             myself.SetActive(false);
+
         }
     }
+
 }

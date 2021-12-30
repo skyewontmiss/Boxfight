@@ -104,7 +104,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         PlayerPrefs.Save();
     }
 
-    public void AimTrainer()
+    public void SinglePlayerCampaign()
     {
         if (PhotonNetwork.CurrentRoom != null)
         {
@@ -113,7 +113,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
 
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("Aim Trainer");
+        SceneManager.LoadScene(2);
         RoomManager.instance.OnDestroy();
     }
 
