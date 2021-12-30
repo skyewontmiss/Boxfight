@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
     {
         if (distanceToAttack >= nowdistance)
         {   
-            Debug.Log("I am close to the player. I am stopping advancing.");
+            nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
         } else
         {
@@ -42,6 +42,7 @@ public class EnemyMovement : MonoBehaviour
 
         health = maxHealth;
         parent = transform.parent.GetComponent<WaveManager>();
+        enemy.speed = speed;
         if (PlayerPrefs.HasKey("Camera Mode"))
         {
             if (PlayerPrefs.GetInt("Camera Mode") == 0)
