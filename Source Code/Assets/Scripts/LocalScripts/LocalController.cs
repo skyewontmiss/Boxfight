@@ -75,6 +75,7 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         paused = false;
         animating = false;
+        PauseMenu.SetActive(false);
     }
 
 
@@ -295,7 +296,7 @@ public class LocalController : MonoBehaviour
 
     public void Resume()
     {
-        StartCoroutine(CloseMenu());
+        CloseMenu();
     }
 
     public void LeaveMatch()
@@ -327,42 +328,44 @@ public class LocalController : MonoBehaviour
 
     void PauseMenuCheck()
     {
-        if (Input.GetKey(KeyCode.Escape) ||Input.GetKey(KeyCode.Alpha0)||Input.GetKey(KeyCode.Keypad0))
+        if (Input.GetKeyDown(KeyCode.Escape) ||Input.GetKey(KeyCode.Alpha0)||Input.GetKey(KeyCode.Keypad0))
         {
             if (!animating)
             {
                 if (paused)
                 {
-                    StartCoroutine(CloseMenu());
+                    CloseMenu();
                 }
                 else if (!paused)
                 {
-                    StartCoroutine(OpenMenu());
+                    OpenMenu();
                 }
             }
         }
     }
 
 
-
-    IEnumerator OpenMenu()
+    public GameObject PauseMenu;
+    void OpenMenu()
     {
+        Time.timeScale = 0;
+        PauseMenu.SetActive(true);
         animating = true;
         pauseMenuAnimator.Play("PauseMenuOpen", 0, 0f);
-        yield return new WaitForSeconds(0.30f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         animating = false;
         paused = true;
     }
 
-    IEnumerator CloseMenu()
+    void CloseMenu()
     {
+        Time.timeScale = 1;
+        PauseMenu.SetActive(false);
         animating = true;
         pauseMenuAnimator.Play("PauseMenuClose", 0, 0f);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        yield return new WaitForSeconds(0.30f);
         animating = false;
         paused = false;
     }
