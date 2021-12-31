@@ -357,7 +357,7 @@ public class LocalController : MonoBehaviour
         animating = false;
         paused = true;
     }
-
+    
     void CloseMenu()
     {
         Time.timeScale = 1;
@@ -407,13 +407,27 @@ public class LocalController : MonoBehaviour
             Die();
         }
     }
-
-
-
-    void Die()
+    
+    public void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+//BUtton functions
+    public void Resumme()
+    {
+        PauseMenu.SetActive(false);
+        Time.timeScale = 1;
+        paused = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+    public void Menu()
+    {
+        SceneManager.LoadScene("i donk know the menu scene name so type here");
+    }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 
 }
-
