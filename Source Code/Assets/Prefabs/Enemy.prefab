@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3065007902391756763}
   - component: {fileID: 3065007902391756762}
   - component: {fileID: 9147291904804903640}
+  - component: {fileID: 7601830196536682425}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Single Player Enemy
@@ -114,10 +115,11 @@ MonoBehaviour:
   speed: 2
   maxHealth: 100
   healthFill: {fileID: 6417631813685690340}
-  player: {fileID: 0}
   enemy: {fileID: 9147291904804903640}
   distanceToAttack: 3
   nowdistance: 0
+  firstPerson: {fileID: 0}
+  thirdPerson: {fileID: 0}
 --- !u!54 &3065007902391756762
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -156,6 +158,25 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!95 &7601830196536682425
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3065007902391756752}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 355d8f6b485a0d8459734f45f6279815, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6325040544265998685
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,11 +11,11 @@ public class EnemyMovement : MonoBehaviour
     public float maxHealth;
     float health;
     public Image healthFill;
-    public GameObject firstPerson, thirdPerson;
     GameObject player;
     public NavMeshAgent enemy;
     public float distanceToAttack;
     public float nowdistance;
+    public GameObject firstPerson, thirdPerson;
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -43,34 +43,15 @@ public class EnemyMovement : MonoBehaviour
         health = maxHealth;
         parent = transform.parent.GetComponent<WaveManager>();
         enemy.speed = speed;
-        if (PlayerPrefs.HasKey("Camera Mode"))
-        {
-            if (PlayerPrefs.GetInt("Camera Mode") == 0)
-            {
-                Destroy(firstPerson);
-                firstPerson = null;
-            }
-            else if (PlayerPrefs.GetInt("Camera Mode") == 1)
-            {
-                Destroy(thirdPerson);
-                thirdPerson = null;
-            }
 
-        }
-        else
-        {
-            Destroy(firstPerson);
-            firstPerson = null;
-        }
-
-        if (thirdPerson == null)
-        {
-            player = firstPerson;
-
-        }
-        else if (firstPerson == null)
+        if (firstPerson == null)
         {
             player = thirdPerson;
+
+        }
+        else if (thirdPerson == null)
+        {
+            player = firstPerson;
 
         }
         else if (thirdPerson != null && firstPerson != null)
