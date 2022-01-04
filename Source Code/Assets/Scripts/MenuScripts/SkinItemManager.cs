@@ -18,7 +18,8 @@ public class SkinItemManager : MonoBehaviour
             skinItems[i] = LockerItemGameObjects[i].GetComponent<SkinItem>();
         }
 
-
+        itemNameText.text = "";
+        itemDescriptionText.text = "";
         RefreshItems();
     }
 

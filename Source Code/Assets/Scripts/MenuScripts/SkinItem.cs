@@ -21,7 +21,9 @@ public class SkinItem : MonoBehaviour
 
     public void OnClick()
     {
-        GameObject.FindGameObjectWithTag("Display Cube").GetComponent<MeshRenderer>().material = skinMaterial;
+        GameObject displayCube = GameObject.FindGameObjectWithTag("Display Cube");
+        displayCube.GetComponent<MeshRenderer>().material = skinMaterial;
+        displayCube.GetComponent<DisplayRotator>().CreateUV();
         GameObject.FindGameObjectWithTag("Skin Item Manager").GetComponent<SkinItemManager>().OnItemClicked(ItemID);
     }
 }

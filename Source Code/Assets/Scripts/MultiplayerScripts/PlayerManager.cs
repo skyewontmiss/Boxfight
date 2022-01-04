@@ -72,18 +72,21 @@ public class PlayerManager : MonoBehaviour
                 //third per
                 controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AllPlayers", "PlayerTP"), spawnpoint.position, spawnpoint.rotation, 0, new object[] { PV.ViewID });
                 myPlayer = controller.GetComponent<PlayerController>();
+                return;
             }
             else if (PlayerPrefs.GetInt("Camera Mode") == 1)
             {
                 //first per
                 controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AllPlayers", "PlayerFP"), spawnpoint.position, spawnpoint.rotation, 0, new object[] { PV.ViewID });
                 myPlayer = controller.GetComponent<PlayerController>();
+                return;
             }
 
         } else
         {
             controller = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "AllPlayers", "PlayerTP"), spawnpoint.position, spawnpoint.rotation, 0, new object[] { PV.ViewID });
             myPlayer = controller.GetComponent<PlayerController>();
+            return;
         }
 
         //teams properties
