@@ -75,7 +75,6 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         paused = false;
         animating = false;
-        PauseMenu.SetActive(false);
     }
 
 
@@ -296,7 +295,7 @@ public class LocalController : MonoBehaviour
 
     public void Resume()
     {
-        CloseMenu();
+        StartCoroutine(CloseMenu());
     }
 
     public void LeaveMatch()
@@ -334,38 +333,35 @@ public class LocalController : MonoBehaviour
             {
                 if (paused)
                 {
-                    CloseMenu();
+                    StartCoroutine(CloseMenu());
                 }
                 else if (!paused)
                 {
-                    OpenMenu();
+                    StartCoroutine(OpenMenu());
                 }
             }
         }
     }
 
 
-    public GameObject PauseMenu;
-    void OpenMenu()
+    IEnumerator OpenMenu()
     {
-        Time.timeScale = 0;
-        PauseMenu.SetActive(true);
         animating = true;
         pauseMenuAnimator.Play("PauseMenuOpen", 0, 0f);
+        yield return new WaitForSeconds(0.667f);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         animating = false;
         paused = true;
     }
-    
-    void CloseMenu()
+
+    IEnumerator CloseMenu()
     {
-        Time.timeScale = 1;
-        PauseMenu.SetActive(false);
         animating = true;
         pauseMenuAnimator.Play("PauseMenuClose", 0, 0f);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        yield return new WaitForSeconds(0.5f);
         animating = false;
         paused = false;
     }
@@ -411,23 +407,6 @@ public class LocalController : MonoBehaviour
     public void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
-//BUtton functions
-    public void Resumme()
-    {
-        PauseMenu.SetActive(false);
-        Time.timeScale = 1;
-        paused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-    }
-    public void Menu()
-    {
-        SceneManager.LoadScene("i donk know the menu scene name so type here");
-    }
-    public void Quit()
-    {
-        Application.Quit();
     }
 
 }

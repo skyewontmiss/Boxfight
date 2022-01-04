@@ -30,12 +30,12 @@ public class MyOptionsMenu : MonoBehaviour
         //mouse settings
         if (PlayerPrefs.HasKey("Mouse"))
         {
-            MouseLook.value = PlayerPrefs.GetFloat("Mouse");
+            MouseLook.value = PlayerPrefs.GetInt("Mouse");
         }
         else
         {
-            MouseLook.value = 1f;
-            PlayerPrefs.SetFloat("Mouse", MouseLook.value);
+            MouseLook.value = 1;
+            PlayerPrefs.SetInt("Mouse", (int) MouseLook.value);
             PlayerPrefs.Save();
         }
 
@@ -189,7 +189,7 @@ public class MyOptionsMenu : MonoBehaviour
         else
         {
             cameraFOVSlider.value = 60;
-            PlayerPrefs.SetFloat("FOV", cameraFOVSlider.value);
+            PlayerPrefs.SetInt("FOV", (int) cameraFOVSlider.value);
             PlayerPrefs.Save();
         }
 

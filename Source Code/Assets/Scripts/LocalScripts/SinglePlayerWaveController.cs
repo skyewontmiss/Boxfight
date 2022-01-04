@@ -28,6 +28,10 @@ public class SinglePlayerWaveController : MonoBehaviour
                 thirdPerson = null;
             }
 
+        } else
+        {
+            Destroy(firstPerson);
+            firstPerson = null;
         }
         waveIndex = -1;
         instance = this;
