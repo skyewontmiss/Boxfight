@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MultiplayerMaps/Inlands.unity
     guid: 7d69b1b2cd9f77c4190f1db10ffd8595
   - enabled: 1
-    path: Assets/Scenes/MultiplayerMaps/The Stadium.unity
-    guid: e00b409d7f5cd7e429fafa43bb733975
-  - enabled: 1
     path: Assets/Scenes/MultiplayerMaps/Winter Skirmish (CHRISTMAS MAP).unity
     guid: d94b12ec7aab99f42855cb98e598f288
+  - enabled: 1
+    path: Assets/Scenes/MultiplayerMaps/The Stadium.unity
+    guid: e00b409d7f5cd7e429fafa43bb733975
   m_configObjects: {}

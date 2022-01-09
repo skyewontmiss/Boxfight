@@ -1888,10 +1888,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -2005,7 +2005,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: The Difference.
+          m_StringArgument: Game Name Change.
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -2940,7 +2940,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -15888.217, y: 628774.8}
+  m_AnchoredPosition: {x: -48122.457, y: 2651930}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &117127847
@@ -4323,10 +4323,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -4440,7 +4440,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: A Huge Update.
+          m_StringArgument: 2 New Maps, First Person Mode!
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -6752,10 +6752,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -6869,7 +6869,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Welcome back to Boxfight!
+          m_StringArgument: Boxfight is BACK! FPS Counter, Removed Accounts
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -7953,7 +7953,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000011444092, y: -60.10849}
+  m_AnchoredPosition: {x: -0.000011444092, y: -60.1084}
   m_SizeDelta: {x: 1087.4479, y: 120.21698}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &323902443
@@ -8030,7 +8030,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &341596388
 MonoBehaviour:
@@ -8052,7 +8052,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Festivity!
+  m_text: Almost Showtime
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -9308,25 +9308,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &394209815
-RectTransform:
+--- !u!4 &394209815
+Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394209814}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0435, y: 6.4055, z: -2.95}
   m_LocalScale: {x: -2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 1704462628}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 6.9}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!199 &394209816
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18296,7 +18291,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558579806
 MonoBehaviour:
@@ -18318,7 +18313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The Difference.
+  m_text: Game Name Change.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -18687,10 +18682,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -18804,7 +18799,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Some fixtures and changes!
+          m_StringArgument: Synced SFX, New map, small fixes!
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -19387,7 +19382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Major Update
+  m_text: Hotfix
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -20336,10 +20331,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -20634,7 +20629,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1267899158}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayFabAuthentication, Assembly-CSharp
         m_MethodName: PlayfabLogOut
         m_Mode: 1
@@ -21050,7 +21045,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &636599437
 MonoBehaviour:
@@ -23359,7 +23354,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1267899158}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayFabAuthentication, Assembly-CSharp
         m_MethodName: PlayFabLogin
         m_Mode: 1
@@ -23765,10 +23760,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -23882,7 +23877,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: New Look!
+          m_StringArgument: New UI and Versioning.
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -27027,7 +27022,7 @@ RectTransform:
   m_GameObject: {fileID: 843650009}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400256711}
   - {fileID: 96322284}
@@ -28928,7 +28923,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1267899158}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayFabAuthentication, Assembly-CSharp
         m_MethodName: PlayFabRegister
         m_Mode: 1
@@ -31797,10 +31792,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -31914,7 +31909,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Festivity!
+          m_StringArgument: 2 New Maps, interactable items and more!
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -37955,7 +37950,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1267899157}
-  - component: {fileID: 1267899158}
   - component: {fileID: 1267899159}
   m_Layer: 5
   m_Name: FenceManager
@@ -37987,34 +37981,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1820, y: 980}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1267899158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1267899156}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdd17264306ab1f4a9d69bd869252519, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PlayerIdCache: 
-  Login_User: {fileID: 556067577}
-  Login_Password: {fileID: 1058557663}
-  Register_User: {fileID: 1508505195}
-  Register_Password: {fileID: 1410016868}
-  Register_Email: {fileID: 1635965438}
-  errorText: {fileID: 0}
-  loggedInText: {fileID: 750381045}
-  Username: 
-  isAllowing: 0
-  isRegistering: 0
-  BackToMenu: {fileID: 1611142005}
-  AccountCheckToClose: {fileID: 1800418461}
-  menuSwitchAnimator: {fileID: 2121601400}
-  myAnimator: {fileID: 1267899159}
-  errorr: 
 --- !u!95 &1267899159
 Animator:
   serializedVersion: 3
@@ -39370,10 +39336,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -41546,7 +41512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0.0.8
+  m_text: 0.0.9
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -42494,7 +42460,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1478021493
 MonoBehaviour:
@@ -42516,7 +42482,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Some fixtures and changes!
+  m_text: Synced SFX, New map, small fixes!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -42543,7 +42509,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 55.8
+  m_fontSize: 45.4
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -45779,7 +45745,7 @@ RectTransform:
   m_GameObject: {fileID: 1611142005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1967790535}
   - {fileID: 819963503}
@@ -45852,10 +45818,10 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
+  m_ChildAlignment: 4
   m_Spacing: 0
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
+  m_ChildForceExpandWidth: 0
+  m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
@@ -45969,7 +45935,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Duct Tape Update
+          m_StringArgument: Gun Particles, Damage changes, bugfixes
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 2121601400}
@@ -47824,7 +47790,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1685658484
 MonoBehaviour:
@@ -47846,7 +47812,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Duct Tape Update
+  m_text: Gun Particles, Damage changes, bugfixes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -47873,7 +47839,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 37.85
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -48726,7 +48692,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -32768
   m_TargetDisplay: 0
 --- !u!224 &1704462628
 RectTransform:
@@ -50446,7 +50412,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1752983383
 MonoBehaviour:
@@ -50468,7 +50434,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome back to Boxfight!
+  m_text: Boxfight is BACK! FPS Counter, Removed Accounts
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -50495,7 +50461,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 58.75
+  m_fontSize: 30.8
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -53928,7 +53894,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849708587
 MonoBehaviour:
@@ -53950,7 +53916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Festivity!
+  m_text: 2 New Maps, interactable items and more!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -53977,7 +53943,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 37.65
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -55123,7 +55089,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902989349
 MonoBehaviour:
@@ -55145,7 +55111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A Huge Update.
+  m_text: 2 New Maps, First Person Mode!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -55172,7 +55138,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 49.65
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -59053,7 +59019,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 704.1081, y: 128.77527}
+  m_SizeDelta: {x: 711.5666, y: 128.77527}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044269459
 MonoBehaviour:
@@ -59075,7 +59041,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New look!
+  m_text: New UI and Versioning
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
   m_sharedMaterial: {fileID: 21809785584020342, guid: e99662336d1311740846b0200d162c30, type: 2}
@@ -59102,7 +59068,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 70.1
   m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -63322,7 +63288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 869926.56, y: 2051425.2}
+  m_AnchoredPosition: {x: 884820.94, y: 3828292.8}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &3840246698559144831
@@ -63364,7 +63330,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.00012207031, y: 249}
+  m_AnchoredPosition: {x: -14241.5, y: 551668.6}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &4203517834094689220
@@ -63672,8 +63638,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6373419577339806046}
   m_HandleRect: {fileID: 6853929910629427296}
   m_Direction: 2
-  m_Value: 0.3665053
-  m_Size: 0.69506234
+  m_Value: 1
+  m_Size: 0.44633847
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -63840,7 +63806,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8048026397304472175}
   m_HandleRect: {fileID: 998047936626102262}
   m_Direction: 0
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:

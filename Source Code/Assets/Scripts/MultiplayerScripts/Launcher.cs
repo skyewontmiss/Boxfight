@@ -79,13 +79,6 @@ public class Launcher : MonoBehaviourPunCallbacks
         }
 
         PhotonNetwork.AutomaticallySyncScene = true;
-        if(PlayFabAuthentication.instance != null)
-        {
-            PlayFabAuthentication.instance.StartOnPhotonConnected();
-        } else
-        {
-            Debug.LogWarning("Debug.IO Exception: Playfab Authentication Instance is returning as null.");
-        }
 
     }
 

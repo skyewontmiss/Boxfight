@@ -2715,7 +2715,6 @@ GameObject:
   - component: {fileID: 674738748}
   - component: {fileID: 674738750}
   - component: {fileID: 674738749}
-  - component: {fileID: 674738751}
   m_Layer: 5
   m_Name: Instructions/Introduction
   m_TagString: Untagged
@@ -2790,18 +2789,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &674738751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 674738747}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9fe969fef943cc4f97c8b3f42695ac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &694948440
 GameObject:
   m_ObjectHideFlags: 0
