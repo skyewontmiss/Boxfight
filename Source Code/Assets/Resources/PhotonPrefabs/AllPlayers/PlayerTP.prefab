@@ -18263,6 +18263,9 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 630c2d03c8e21db43ab5dda9c1086233, type: 3}
   shotParticles: {fileID: 3462646635015266224}
+  FPSController: 0
+  ADSPosition: {fileID: 0}
+  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &40723121736223095
 AudioSource:
@@ -18449,6 +18452,9 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 7373b99a35f98c240b7c3f771af8ff58, type: 3}
   shotParticles: {fileID: 6097397319794196691}
+  FPSController: 0
+  ADSPosition: {fileID: 0}
+  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &2783411126714217828
 AudioSource:
@@ -18635,6 +18641,9 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 11be52e6e81a41b408d418dc5c3a2a84, type: 3}
   shotParticles: {fileID: 8278473276655566696}
+  FPSController: 0
+  ADSPosition: {fileID: 0}
+  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &2684650766615704233
 AudioSource:
@@ -19100,6 +19109,9 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 9509fdab07fd52f47bf5d17aef736eb8, type: 3}
   shotParticles: {fileID: 641104285293786000}
+  FPSController: 0
+  ADSPosition: {fileID: 0}
+  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &6437272859137496916
 AudioSource:

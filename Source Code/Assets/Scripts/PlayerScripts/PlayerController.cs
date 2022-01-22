@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
 
     [SerializeField] float sprintSpeed, walkSpeed, jumpForce, smoothTime;
-    [SerializeField] [HideInInspector] public float mouseSensitivity;
+    [SerializeField] [HideInInspector] public int mouseSensitivity;
     TMP_Text chatContents;
 
     [SerializeField] Item[] items;
@@ -157,7 +157,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         //mouse sensetivity settings
         if (PlayerPrefs.HasKey("Mouse"))
         {
-            mouseSensitivity = PlayerPrefs.GetFloat("Mouse");
+            mouseSensitivity = PlayerPrefs.GetInt("Mouse");
         }
         else
         {

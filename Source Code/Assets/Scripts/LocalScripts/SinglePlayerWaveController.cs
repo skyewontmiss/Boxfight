@@ -35,8 +35,7 @@ public class SinglePlayerWaveController : MonoBehaviour
         }
         waveIndex = -1;
         instance = this;
-        RefreshWaves();
-        StartCoroutine(StoryboardStart());
+        StartCoroutine(Storyboard1());
 
     }
 
@@ -48,9 +47,11 @@ public class SinglePlayerWaveController : MonoBehaviour
         }
     }
 
+
+
     public void NextWave()
     {
-        if(waveIndex == 0)
+        if (waveIndex == 0)
         {
             if(AchievementManager.instance != null)
             {
@@ -59,38 +60,51 @@ public class SinglePlayerWaveController : MonoBehaviour
         }
         RefreshWaves();
         waveIndex += 1;
-        if(waveIndex == 1)
+        if(Waves[waveIndex] == null)
         {
-            //StartCoroutine(StoryboardElement("Huh. Looks like you can take it.", 6f));
-            //StartCoroutine(StoryboardElement("But we aren't making this easy.", 6f));
-            //StartCoroutine(StoryboardElement("Let's do this again.", 4f));
+            Debug.Log("End");
         }
+        StartCoroutine(WaveAnnounce());
+        
         Waves[waveIndex].SetActive(true);
     }
 
-    IEnumerator StoryboardStart()
+    IEnumerator WaveAnnounce()
+    {
+        storyAnimator.Play("Popup", 0, 0f);
+        StoryboardText.text = "Starting wave " + waveIndex + "...";
+        yield return new WaitForSeconds(4f);
+        storyAnimator.Play("Idle", 0, 0f);
+    }
+
+    #region level1
+
+    IEnumerator Storyboard1()
     {
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "We've been expecting you.";
         yield return new WaitForSeconds(3f);
         storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "You gotta defeat all the enemies.";
-        yield return new WaitForSeconds(5f);
-        storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "Anyway, let's explain what your doing here.";
         yield return new WaitForSeconds(5f);
         storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "You gotta defeat all the enemies.";
+        StoryboardText.text = "You gotta defeat all the enemies in each wave.";
         yield return new WaitForSeconds(4f);
         storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "If you don't, they kill you. Or we kill you.";
-        yield return new WaitForSeconds(6f);
+        StoryboardText.text = "There are 7 waves in each level.";
+        yield return new WaitForSeconds(3f);
         storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "Let's see how you do with the first wave.";
+        StoryboardText.text = "You have to clear all the enemies in each level.";
+        yield return new WaitForSeconds(4f);
+        storyAnimator.Play("Popup", 0, 0f);
+        StoryboardText.text = "Alright, from here on out, your gonna have to go without me.";
         yield return new WaitForSeconds(6f);
         NextWave();
+        storyAnimator.Play("Idle", 0, 0f);
 
     }
+
+    #endregion
 
 
 

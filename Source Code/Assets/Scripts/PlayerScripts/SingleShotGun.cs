@@ -24,6 +24,7 @@ public class SingleShotGun : Gun
 
 
 
+
     float timer;
     int currentAmmo;
     public float cameraAimMaximum;
@@ -92,26 +93,24 @@ public class SingleShotGun : Gun
             maxAmmoText.text = maxAmmo.ToString();
             currentAmmoText.text = currentAmmo.ToString();
             Reload();
-            if(!playerController.paused)
-{
-
-            if (Input.GetKey(KeyCode.Mouse1))
+            if (!playerController.paused)
             {
-                if (cam.fieldOfView > cameraAimMinimum)
+                if (Input.GetKey(KeyCode.Mouse1))
                 {
-                    cam.fieldOfView -= cameraAimSpeed;
-                    playerController.isAiming = true;
+                    if (cam.fieldOfView > cameraAimMinimum)
+                    {
+                        cam.fieldOfView -= cameraAimSpeed;
+                        playerController.isAiming = true;
+
+                    }
 
                 }
-
+                else if (cam.fieldOfView < cameraAimMaximum)
+                {
+                    cam.fieldOfView += cameraAimSpeed;
+                    playerController.isAiming = false;
+                }
             }
-            else if (cam.fieldOfView < cameraAimMaximum)
-            {
-                cam.fieldOfView += cameraAimSpeed;
-                playerController.isAiming = false;
-            }
-}
-            
         }
     }
 

@@ -145,7 +145,7 @@ public class LocalController : MonoBehaviour
         //mouse sensetivity settings
         if (PlayerPrefs.HasKey("Mouse"))
         {
-            mouseSensitivity = PlayerPrefs.GetFloat("Mouse");
+            mouseSensitivity = PlayerPrefs.GetInt("Mouse");
         }
         else
         {

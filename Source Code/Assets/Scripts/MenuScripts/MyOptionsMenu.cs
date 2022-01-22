@@ -35,7 +35,7 @@ public class MyOptionsMenu : MonoBehaviour
         else
         {
             MouseLook.value = 1;
-            PlayerPrefs.SetInt("Mouse", (int) MouseLook.value);
+            PlayerPrefs.SetInt("Mouse", 1);
             PlayerPrefs.Save();
         }
 
@@ -203,7 +203,7 @@ public class MyOptionsMenu : MonoBehaviour
         else
         {
             cameraModeDropdown.value = 0;
-            PlayerPrefs.SetInt("Camera Mode", cameraModeDropdown.value);
+            PlayerPrefs.SetInt("Camera Mode", 0);
             PlayerPrefs.Save();
         }
 
@@ -236,7 +236,7 @@ public class MyOptionsMenu : MonoBehaviour
 
     public void SaveSensitivity()
     {
-        PlayerPrefs.SetFloat("Mouse", MouseLook.value);
+        PlayerPrefs.SetInt("Mouse", (int) MouseLook.value);
         PlayerPrefs.Save();
     }
 
