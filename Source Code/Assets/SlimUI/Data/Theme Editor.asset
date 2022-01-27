@@ -12,22 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbacb2414dc974448827c731c3756377, type: 3}
   m_Name: Theme Editor
   m_EditorClassIdentifier: 
-  custom1:
-    graphic1: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  NeonMarine:
+    graphic1: {r: 0.19672132, g: 1, b: 0, a: 1}
     text1:
       serializedVersion: 2
-      rgba: 4294967295
-  custom2:
-    graphic2: {r: 0.44750205, g: 0.4240299, b: 0.8113208, a: 1}
+      rgba: 4294960290
+  Midnight:
+    graphic2: {r: 0.05374599, g: 0, b: 0.4528302, a: 1}
     text2:
       serializedVersion: 2
-      rgba: 4294966499
-  custom3:
-    graphic3: {r: 0.26606238, g: 1, b: 0, a: 1}
+      rgba: 4294967295
+  Fluffy:
+    graphic3: {r: 1, g: 0, b: 0.6153846, a: 1}
     text3:
       serializedVersion: 2
-      rgba: 4293066721
-  currentColor: {r: 0.44750205, g: 0.4240299, b: 0.8113208, a: 1}
+      rgba: 4294824703
+  BigContrast:
+    graphic4: {r: 0.754717, g: 0.72328746, b: 0, a: 1}
+    text4:
+      serializedVersion: 2
+      rgba: 4294967295
+  LightMode:
+    graphic5: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    text5:
+      serializedVersion: 2
+      rgba: 4294967295
+  currentColor: {r: 0.14058445, g: 0.7169812, b: 0, a: 1}
   textColor:
     serializedVersion: 2
-    rgba: 4294966499
+    rgba: 4294960290

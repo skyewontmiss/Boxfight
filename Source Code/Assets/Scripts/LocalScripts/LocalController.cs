@@ -55,6 +55,7 @@ public class LocalController : MonoBehaviour
 
     void Awake()
     {
+        Time.timeScale = 1;
         rb = GetComponent<Rigidbody>();
         postProcessing = GameObject.FindGameObjectWithTag("PostProcessingObject");
 
@@ -334,11 +335,13 @@ public class LocalController : MonoBehaviour
 
     public void Resume()
     {
+        Time.timeScale = 1;
         StartCoroutine(CloseMenu());
     }
 
     public void LeaveMatch()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
@@ -372,10 +375,12 @@ public class LocalController : MonoBehaviour
             {
                 if (paused)
                 {
+                    Time.timeScale = 1;
                     StartCoroutine(CloseMenu());
                 }
                 else if (!paused)
                 {
+
                     StartCoroutine(OpenMenu());
                 }
             }
@@ -392,6 +397,7 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         animating = false;
         paused = true;
+        Time.timeScale = 0;
     }
 
     IEnumerator CloseMenu()
@@ -403,6 +409,7 @@ public class LocalController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         animating = false;
         paused = false;
+        Time.timeScale = 1;
     }
 
 
@@ -445,7 +452,9 @@ public class LocalController : MonoBehaviour
     
     public void Die()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
     }
 
 }

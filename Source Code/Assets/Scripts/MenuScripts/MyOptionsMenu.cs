@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using SlimUI.ModernMenu;
 
 public class MyOptionsMenu : MonoBehaviour
 {
@@ -13,15 +14,17 @@ public class MyOptionsMenu : MonoBehaviour
     //menu settings text components
     public TMP_Text FullscreenText, VSyncText, PostProcessingText, textChatText, cameraFOVText, fpsCounterText;
     public Animator popUpExperimental;
-    public TMP_Dropdown resolutionDropdown, cameraModeDropdown;
+    public TMP_Dropdown resolutionDropdown, cameraModeDropdown, themeDropdown;
     bool fullscreenBoolForRes;
     public TMP_Text usernameOptionsPlaceholderText, usernameOptionsSettingHeaderText;
     public TMP_InputField usernameOptionsInputField;
+    public ThemeController[] themeControllers;
 
     private void Start()
     {
         LoadAllPlayerPrefs();
         fullscreenBoolForRes = false;
+
     }
 
     private void LoadAllPlayerPrefs()
@@ -98,7 +101,7 @@ public class MyOptionsMenu : MonoBehaviour
                     FullscreenText.text = "on";
                     fullscreenBoolForRes = true;
                 }
-            } 
+            }
 
             //resolution
             if (PlayerPrefs.HasKey("Resolution"))
@@ -189,7 +192,7 @@ public class MyOptionsMenu : MonoBehaviour
         else
         {
             cameraFOVSlider.value = 60;
-            PlayerPrefs.SetInt("FOV", (int) cameraFOVSlider.value);
+            PlayerPrefs.SetInt("FOV", (int)cameraFOVSlider.value);
             PlayerPrefs.Save();
         }
 
@@ -217,7 +220,61 @@ public class MyOptionsMenu : MonoBehaviour
         {
             usernameOptionsPlaceholderText.text = "Pick your username...";
         }
+
+        if (PlayerPrefs.HasKey("Theme"))
+        {
+
+            if (PlayerPrefs.GetInt("Theme") == 0)
+            {
+                themeDropdown.value = PlayerPrefs.GetInt("Theme");
+                PlayerPrefs.SetInt("Theme", 0);
+                PlayerPrefs.Save();
+            }
+            else if (PlayerPrefs.GetInt("Theme") == 1)
+            {
+                themeDropdown.value = PlayerPrefs.GetInt("Theme");
+                PlayerPrefs.SetInt("Theme", 1);
+                PlayerPrefs.Save();
+            }
+            else
+            if (PlayerPrefs.GetInt("Theme") == 2)
+            {
+                themeDropdown.value = PlayerPrefs.GetInt("Theme");
+                PlayerPrefs.SetInt("Theme", 2);
+                PlayerPrefs.Save();
+            }
+            else
+            if (PlayerPrefs.GetInt("Theme") == 3)
+            {
+                themeDropdown.value = PlayerPrefs.GetInt("Theme");
+                PlayerPrefs.SetInt("Theme", 3);
+                PlayerPrefs.Save();
+            }
+            else
+            if (PlayerPrefs.GetInt("Theme") == 4)
+            {
+                themeDropdown.value = PlayerPrefs.GetInt("Theme");
+                PlayerPrefs.SetInt("Theme", 4);
+                PlayerPrefs.Save();
+            }
+
+            foreach (ThemeController themeController in themeControllers)
+            {
+                themeController.UpdateThemeColorsAtRuntime(PlayerPrefs.GetInt("Theme"));
+            }
+        }
+        else
+        {
+            resolutionDropdown.value = 0;
+            PlayerPrefs.SetInt("Theme", 0);
+            PlayerPrefs.Save();
+            foreach (ThemeController themeController in themeControllers)
+            {
+                themeController.UpdateThemeColorsAtRuntime(0);
+            }
+        }
     }
+
 
     public void OnValueChanged()
     {
@@ -282,6 +339,43 @@ public class MyOptionsMenu : MonoBehaviour
                 Screen.SetResolution(480, 270, fullscreenBoolForRes);
                 PlayerPrefs.Save();
             }
+        }
+    }
+
+    public void SaveTheme()
+    {
+        if (themeDropdown.value == 0)
+        {
+            PlayerPrefs.SetInt("Theme", 0);
+            PlayerPrefs.Save();
+        }
+        if (themeDropdown.value == 1)
+        {
+            PlayerPrefs.SetInt("Theme", 1);
+            PlayerPrefs.Save();
+        }
+        else
+        if (themeDropdown.value == 2)
+        {
+            PlayerPrefs.SetInt("Theme", 2);
+            PlayerPrefs.Save();
+        }
+        else
+        if (themeDropdown.value == 3)
+        {
+            PlayerPrefs.SetInt("Theme", 3);
+            PlayerPrefs.Save();
+        }
+        else
+        if (themeDropdown.value == 4)
+        {
+            PlayerPrefs.SetInt("Theme", 4);
+            PlayerPrefs.Save();
+        }
+
+        foreach (ThemeController themeController in themeControllers)
+        {
+            themeController.UpdateThemeColorsAtRuntime(themeDropdown.value);
         }
     }
 

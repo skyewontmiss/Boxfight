@@ -25,10 +25,29 @@ namespace SlimUI.ModernMenu{
 			public Color32 text3;
 		}
 
+		[System.Serializable]
+		public class Custom4
+		{
+			[Header("Text")]
+			public Color graphic4;
+			public Color32 text4;
+		}
+
+		[System.Serializable]
+		public class Custom5
+		{
+			[Header("Text")]
+			public Color graphic5;
+			public Color32 text5;
+		}
+
+
 		[Header("CUSTOM SETTINGS")]
-		public Custom1 custom1;
-		public Custom2 custom2;
-		public Custom3 custom3;
+		public Custom1 NeonMarine;
+		public Custom2 Midnight;
+		public Custom3 Fluffy;
+		public Custom4 BigContrast;
+		public Custom5 LightMode;
 
 		[HideInInspector]
 		public Color currentColor;

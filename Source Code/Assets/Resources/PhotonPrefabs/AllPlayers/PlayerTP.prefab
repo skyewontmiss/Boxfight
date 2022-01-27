@@ -18263,9 +18263,6 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 630c2d03c8e21db43ab5dda9c1086233, type: 3}
   shotParticles: {fileID: 3462646635015266224}
-  FPSController: 0
-  ADSPosition: {fileID: 0}
-  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &40723121736223095
 AudioSource:
@@ -18452,9 +18449,6 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 7373b99a35f98c240b7c3f771af8ff58, type: 3}
   shotParticles: {fileID: 6097397319794196691}
-  FPSController: 0
-  ADSPosition: {fileID: 0}
-  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &2783411126714217828
 AudioSource:
@@ -18641,9 +18635,6 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 11be52e6e81a41b408d418dc5c3a2a84, type: 3}
   shotParticles: {fileID: 8278473276655566696}
-  FPSController: 0
-  ADSPosition: {fileID: 0}
-  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &2684650766615704233
 AudioSource:
@@ -18990,22 +18981,9 @@ MonoBehaviour:
   ChatInput: {fileID: 3814578931234530629}
   _maximumMessages: 10
   TeamsCube: {fileID: 8924308856562540623}
-  allMaterials:
-  - {fileID: 2100000, guid: c1857fc7091ac4633a78fe5387c5d66a, type: 2}
-  - {fileID: 2100000, guid: de7e32ef6c2e84928aee67cf65292972, type: 2}
-  - {fileID: 2100000, guid: 28c4d4343a504460fb156afb9b858311, type: 2}
-  - {fileID: 2100000, guid: 1bacd63d7603d41c28d91d689979d21f, type: 2}
-  - {fileID: 2100000, guid: 849773bda27814957ae551819bb8884a, type: 2}
-  - {fileID: 2100000, guid: fd8fde642a9d6487abdc10c57655af29, type: 2}
-  - {fileID: 2100000, guid: 981a6c651e539497da0058d713deecde, type: 2}
-  - {fileID: 2100000, guid: 14fac2c4db58a492aba33d256a37a52a, type: 2}
-  - {fileID: 2100000, guid: c2c33447d8a9c48e0aebebbe09c0a6a2, type: 2}
-  - {fileID: 2100000, guid: 00f482e20366e49b1bd8dc92a0292f5e, type: 2}
-  - {fileID: 2100000, guid: bab902b3e15fe445f9cd096768fba893, type: 2}
-  - {fileID: 2100000, guid: 923b95e6abf5a4f5ab9ec1d101f3f788, type: 2}
-  - {fileID: 2100000, guid: e452ab889135440b8ab7811cd598c53c, type: 2}
-  - {fileID: 2100000, guid: 65d63dfe8139b435c90c087eb9582982, type: 2}
-  - {fileID: 2100000, guid: 80b04eec94eb640ae8465a9f7693b18b, type: 2}
+  Textures:
+  - {fileID: 2100000, guid: 4c937cd14151a824c9e4eb941e49c355, type: 2}
+  - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
   fpsCounter: {fileID: 6251661444898970169}
 --- !u!1 &7530951419536076881
 GameObject:
@@ -19109,9 +19087,6 @@ MonoBehaviour:
   isAiming: 0
   gunSFX: {fileID: 8300000, guid: 9509fdab07fd52f47bf5d17aef736eb8, type: 3}
   shotParticles: {fileID: 641104285293786000}
-  FPSController: 0
-  ADSPosition: {fileID: 0}
-  normalPosition: {fileID: 0}
   cameraAimMaximum: 0
 --- !u!82 &6437272859137496916
 AudioSource:

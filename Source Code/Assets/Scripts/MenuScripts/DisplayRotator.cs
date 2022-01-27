@@ -35,7 +35,7 @@ public class DisplayRotator : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.R))
         {
-            objectToRotate.transform.SetPositionAndRotation(objectToRotate.position, new Quaternion(0, 0, 0, 0));
+            objectToRotate.transform.SetPositionAndRotation(objectToRotate.position, new Quaternion(0, -180, 0, 0));
         }
 
     }

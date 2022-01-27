@@ -25,5 +25,7 @@ public class SkinItem : MonoBehaviour
         displayCube.GetComponent<MeshRenderer>().material = skinMaterial;
         displayCube.GetComponent<DisplayRotator>().CreateUV();
         GameObject.FindGameObjectWithTag("Skin Item Manager").GetComponent<SkinItemManager>().OnItemClicked(ItemID);
+        PlayerPrefs.SetInt("Skin", ItemID);
+        PlayerPrefs.Save();
     }
 }
