@@ -176,7 +176,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
                     //no post processing wanted
                     postProcessing.SetActive(false);
                 }
-                
+
             }
             else if (PlayerPrefs.GetInt("Post Processing") == 1)
             {
@@ -220,7 +220,7 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
             }
         }
 
-        if(myWeaponSways != null)
+        if (myWeaponSways != null)
         {
             foreach (WeaponSway weaponSway in myWeaponSways)
             {
@@ -229,50 +229,42 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
         }
 
 
-        if(PlayerPrefs.HasKey("Skin"))
+        if (PlayerPrefs.HasKey("Skin"))
         {
             int skin = PlayerPrefs.GetInt("Skin");
             photonView.RPC("ChangeSkin", RpcTarget.All, skin);
 
-        } else
+        }
+        else
         {
-            
+
         }
 
-        if (PlayerPrefs.HasKey("FirstMatch"))
+        AchievementManager.instance.AchievementGet("The First");
+        //chat code
+    }
+
+        public void SendChat(string msg, bool isSystemMessage)
         {
-            if (PlayerPrefs.GetInt("FirstMatch") == 0)
+
+            if (isSystemMessage == true)
             {
-                //skip over
-            } 
-        } else
-        {
-            AchievementManager.instance.AchievementGet("First Match");
-        }
+                string NewMessage = "System: " + msg;
+                playerManagerPV.RPC("RPC_AddNewMessage", RpcTarget.All, NewMessage);
 
-    }
-    //chat code
+            }
+            else
+            {
+                string NewMessage = PhotonNetwork.NickName + ": " + msg;
+                playerManagerPV.RPC("RPC_AddNewMessage", RpcTarget.All, NewMessage);
+            }
 
-    public void SendChat(string msg, bool isSystemMessage)
-    {
 
-        if(isSystemMessage == true)
-        {
-            string NewMessage = "System: " + msg;
-            playerManagerPV.RPC("RPC_AddNewMessage", RpcTarget.All, NewMessage);
-
-        } else
-        {
-            string NewMessage = PhotonNetwork.NickName + ": " + msg;
-            playerManagerPV.RPC("RPC_AddNewMessage", RpcTarget.All, NewMessage);
         }
 
 
-    }
 
-
-
-    public void SubmitChat()
+        public void SubmitChat()
     {
         string blankCheck = ChatInput.text;
         blankCheck = Regex.Replace(blankCheck, @"\s", "");

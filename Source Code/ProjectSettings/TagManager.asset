@@ -12,6 +12,7 @@ TagManager:
   - Locker Item
   - Game Player
   - Single Player Enemy
+  - Achievement Item
   layers:
   - Default
   - TransparentFX
