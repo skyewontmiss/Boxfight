@@ -191,7 +191,7 @@ public class MyOptionsMenu : MonoBehaviour
         }
         else
         {
-            cameraFOVSlider.value = 60;
+            cameraFOVSlider.value = 80;
             PlayerPrefs.SetInt("FOV", (int)cameraFOVSlider.value);
             PlayerPrefs.Save();
         }

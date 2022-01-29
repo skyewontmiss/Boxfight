@@ -194,7 +194,7 @@ public class LocalController : MonoBehaviour
 
         } else
         {
-            myCamera.fieldOfView = 60;
+            myCamera.fieldOfView = 80;
         }
 
         //FPS Counter settings

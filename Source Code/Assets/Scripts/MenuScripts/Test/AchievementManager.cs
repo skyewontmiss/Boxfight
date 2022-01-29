@@ -23,11 +23,27 @@ public class AchievementManager : MonoBehaviour
         instance = this;
         myself.SetActive(false);
 
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+
+    }
+
+    public void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    public void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             ImportAssets();
         }
     }
+
 
     void ImportAssets()
     {
@@ -56,7 +72,7 @@ public class AchievementManager : MonoBehaviour
                 if (line == achievement.name)
                 {
                     //ends all the code
-                    image.color = new Color(18, 255, 0);
+                    image.color = new Color(0, 255, 0);
                 } else
                 {
                     

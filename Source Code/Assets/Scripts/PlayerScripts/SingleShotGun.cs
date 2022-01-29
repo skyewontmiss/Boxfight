@@ -9,7 +9,7 @@ public class SingleShotGun : Gun
     [SerializeField] Camera cam;
     [SerializeField] PhotonView PV;
     PhotonView myGunPV;
-    [SerializeField] GameObject myPlayer;
+    [SerializeField] GameObject myPlayer, gun;
     [SerializeField] Animator crosshairAnimator;
     [SerializeField] string IGunNameable;
     [SerializeField] AudioSource reloadSound;
@@ -21,6 +21,12 @@ public class SingleShotGun : Gun
     public bool isAiming;
     [SerializeField] AudioClip gunSFX;
     public ParticleSystem shotParticles;
+
+    [Header("Header")]
+    public GameObject adsPos;
+
+    Vector3 initialPosition;
+    public bool FPSController;
 
 
 
@@ -44,6 +50,7 @@ public class SingleShotGun : Gun
     private void Start()
     {
         RefreshCamera(PlayerPrefs.GetInt("FOV"));
+        initialPosition = gun.transform.localPosition;
     }
 
     public override void Use()
@@ -71,7 +78,7 @@ public class SingleShotGun : Gun
             hit.collider.gameObject.GetComponent<IDamageable>()?.TakeDamage(((GunInfo)itemInfo).damage);
             myGunPV.RPC("RPC_ShootWithImpacts", RpcTarget.All, hit.point, hit.normal);
             currentAmmo = currentAmmo - 1;
-            
+
         } else
         {
             crosshairAnimator.Play("ARShoot", 0, 0f);
@@ -95,24 +102,44 @@ public class SingleShotGun : Gun
             Reload();
             if (!playerController.paused)
             {
-                if (Input.GetKey(KeyCode.Mouse1))
+                if (FPSController == true)
                 {
-                    if (cam.fieldOfView > cameraAimMinimum)
+                    if (Input.GetKey(KeyCode.Mouse1))
                     {
-                        cam.fieldOfView -= cameraAimSpeed;
-                        playerController.isAiming = true;
+                        gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, adsPos.transform.localPosition, 0.5f);
 
                     }
+                    else
+                    {
 
+                        gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, initialPosition, 0.5f);
+                    }
+ 
                 }
-                else if (cam.fieldOfView < cameraAimMaximum)
+                else
                 {
-                    cam.fieldOfView += cameraAimSpeed;
-                    playerController.isAiming = false;
+                    if (Input.GetKey(KeyCode.Mouse1))
+                    {
+                        if (cam.fieldOfView > cameraAimMinimum)
+                        {
+                            cam.fieldOfView -= cameraAimSpeed;
+                            playerController.isAiming = true;
+
+                        }
+
+
+                    }
+                    else if (cam.fieldOfView < cameraAimMaximum)
+                    {
+                        cam.fieldOfView += cameraAimSpeed;
+                        playerController.isAiming = false;
+                    }
                 }
             }
         }
-    }
+    }            
+
+
 
     void Reload()
     {
