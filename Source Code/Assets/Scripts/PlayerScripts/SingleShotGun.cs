@@ -44,6 +44,7 @@ public class SingleShotGun : Gun
 
     public void RefreshCamera(int FOV)
     {
+        
         cameraAimMaximum = FOV;
     }
 
@@ -108,11 +109,13 @@ public class SingleShotGun : Gun
                     {
                         gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, adsPos.transform.localPosition, 0.5f);
 
+
                     }
                     else
                     {
 
                         gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, initialPosition, 0.5f);
+
                     }
  
                 }

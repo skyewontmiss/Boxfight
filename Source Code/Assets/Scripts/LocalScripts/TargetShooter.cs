@@ -25,6 +25,10 @@ public class TargetShooter : Gun
     float timer;
     public float cameraAimMaximum;
 
+    public GameObject gun, adsPos;
+    Vector3 initialPosition;
+    public bool FPSController;
+
     void Awake()
     {
         playerController = myPlayer.GetComponent<LocalController>();
@@ -39,6 +43,7 @@ public class TargetShooter : Gun
     private void Start()
     {
         RefreshCamera(PlayerPrefs.GetInt("FOV"));
+        initialPosition = gun.transform.localPosition;
     }
 
     public override void Use()
@@ -70,8 +75,21 @@ public class TargetShooter : Gun
             Reload();
             if (!playerController.paused)
             {
+                if (FPSController == true)
+                {
+                    if (Input.GetKey(KeyCode.Mouse1))
+                    {
+                        gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, adsPos.transform.localPosition, 0.5f);
+                    }
+                    else
+                    {
 
-                if (Input.GetKey(KeyCode.Mouse1))
+                        gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, initialPosition, 0.5f);
+
+                    }
+                }
+
+                    if (Input.GetKey(KeyCode.Mouse1))
                 {
                     if (cam.fieldOfView > cameraAimMinimum)
                     {

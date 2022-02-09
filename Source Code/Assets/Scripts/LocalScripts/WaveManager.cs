@@ -18,14 +18,7 @@ public class WaveManager : MonoBehaviour
         if(enemies > 1)
         {
             enemies = enemies - 1;
-            if(PlayerPrefs.HasKey("XP"))
-            {
-                PlayerPrefs.SetInt("XP", PlayerPrefs.GetInt("XP") + 30);
-
-            } else
-            {
-                PlayerPrefs.SetInt("XP", 30);
-            }
+            XPManager.instance.AddXP(30);
             if(enemies == 0)
             {
                 Debug.Log("End of wave!");

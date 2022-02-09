@@ -13,6 +13,7 @@ TagManager:
   - Game Player
   - Single Player Enemy
   - Achievement Item
+  - MenuMain
   layers:
   - Default
   - TransparentFX

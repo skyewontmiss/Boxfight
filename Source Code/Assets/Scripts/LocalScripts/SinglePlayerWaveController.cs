@@ -35,6 +35,7 @@ public class SinglePlayerWaveController : MonoBehaviour
         }
         waveIndex = -1;
         instance = this;
+        RefreshWaves();
         StartCoroutine(Storyboard1());
 
     }
@@ -83,25 +84,31 @@ public class SinglePlayerWaveController : MonoBehaviour
     {
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "We've been expecting you.";
-        yield return new WaitForSeconds(3f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "Anyway, let's explain what your doing here.";
-        yield return new WaitForSeconds(5f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "You gotta defeat all the enemies in each wave.";
-        yield return new WaitForSeconds(4f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "There are 7 waves in each level.";
-        yield return new WaitForSeconds(3f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "You have to clear all the enemies in each level.";
-        yield return new WaitForSeconds(4f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         storyAnimator.Play("Popup", 0, 0f);
         StoryboardText.text = "Alright, from here on out, your gonna have to go without me.";
-        yield return new WaitForSeconds(6f);
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
         NextWave();
         storyAnimator.Play("Idle", 0, 0f);
 
+    }
+
+    IEnumerator WaitForKeyDown(KeyCode keyCode)
+    {
+        while (!Input.GetKeyDown(keyCode))
+            yield return null;
     }
 
     #endregion
