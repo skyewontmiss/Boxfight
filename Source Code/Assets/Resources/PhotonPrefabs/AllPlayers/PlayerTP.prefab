@@ -18912,6 +18912,7 @@ MonoBehaviour:
   Textures:
   - {fileID: 2100000, guid: 4c937cd14151a824c9e4eb941e49c355, type: 2}
   - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
+  - {fileID: 2100000, guid: a18aaf21e74142a42a00dd263998f9b6, type: 2}
   fpsCounter: {fileID: 6251661444898970169}
 --- !u!1 &7530951419536076881
 GameObject:

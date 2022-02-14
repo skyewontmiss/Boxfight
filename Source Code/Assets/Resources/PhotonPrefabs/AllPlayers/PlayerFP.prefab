@@ -19170,7 +19170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4704553326425273068
 Transform:
   m_ObjectHideFlags: 0
@@ -20501,6 +20501,7 @@ MonoBehaviour:
   Textures:
   - {fileID: 2100000, guid: 4c937cd14151a824c9e4eb941e49c355, type: 2}
   - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
+  - {fileID: 2100000, guid: a18aaf21e74142a42a00dd263998f9b6, type: 2}
   fpsCounter: {fileID: 778320367296485648}
 --- !u!1 &7615723748444887064
 GameObject:

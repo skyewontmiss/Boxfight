@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/HowToPlay.unity
     guid: bb25e27bd190d5f459351b706206483f
   - enabled: 1
-    path: Assets/Scenes/TestScenes/Minigame 1.unity
+    path: Assets/Scenes/Single Player Levels/Chapter 1/Level 1.unity
     guid: 59fc953175b5141479a7891844261f49
   - enabled: 1
     path: Assets/Scenes/MultiplayerMaps/Box Fort.unity
