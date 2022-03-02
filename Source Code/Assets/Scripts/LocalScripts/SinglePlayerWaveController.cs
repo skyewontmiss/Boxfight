@@ -11,6 +11,7 @@ public class SinglePlayerWaveController : MonoBehaviour
     public Animator storyAnimator;
     public TMP_Text StoryboardText;
     public GameObject firstPerson, thirdPerson;
+    public string[] Storyboard;
     
 
     void Start()
@@ -36,6 +37,8 @@ public class SinglePlayerWaveController : MonoBehaviour
         waveIndex = -1;
         instance = this;
         RefreshWaves();
+        storyAnimator.Play("Popup", 0, 0f);
+        StoryboardText.text = "Hey!";
         StartCoroutine(Storyboard1());
 
     }
@@ -82,24 +85,17 @@ public class SinglePlayerWaveController : MonoBehaviour
 
     IEnumerator Storyboard1()
     {
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "We've been expecting you.";
+
         yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "Anyway, let's explain what your doing here.";
-        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "You gotta defeat all the enemies in each wave.";
-        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "There are 7 waves in each level.";
-        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "You have to clear all the enemies in each level.";
-        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
-        storyAnimator.Play("Popup", 0, 0f);
-        StoryboardText.text = "Alright, from here on out, your gonna have to go without me.";
-        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+
+        foreach (string Str in Storyboard)
+        {
+            yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+            storyAnimator.Play("Popup", 0, 0f);
+            StoryboardText.text = Str;
+            yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+
+        }
         NextWave();
         storyAnimator.Play("Idle", 0, 0f);
 

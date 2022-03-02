@@ -387,6 +387,11 @@ public class LocalController : MonoBehaviour
         }
     }
 
+    public void LoadScene(string Scene)
+    {
+        SceneManager.LoadScene(Scene);
+    }
+
 
     IEnumerator OpenMenu()
     {

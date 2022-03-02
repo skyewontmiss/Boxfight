@@ -653,11 +653,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     void Die()
     {
+        AchievementManager.instance.AchievementGet("Skill Issue");
         playerManager.Die();
     }
 
     void FallOuttaWorldDie()
     {
+        AchievementManager.instance.AchievementGet("Rule the World...");
         playerManager.MapFallingDeath();
     }
 

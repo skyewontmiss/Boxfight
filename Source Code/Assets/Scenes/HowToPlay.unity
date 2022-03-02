@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.38679248, g: 0.18755786, b: 0.18755786, a: 1}
+  m_Color: {r: 0.14058445, g: 0.7169812, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2806,7 +2806,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Welcome to Embersky! This is a movement-based 3D shooter with some extra
+  m_text: Welcome to Boxfight! This is a movement-based 3D shooter with some extra
     stuff sprinkled here and there for some fun gameplay! So uh, here's how you play!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e99662336d1311740846b0200d162c30, type: 2}
