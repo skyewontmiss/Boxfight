@@ -4998,7 +4998,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nunemy Production: Experimentation & Prototypes Story'
+  m_text: 'N-Emi Production: Experimentation & Prototypes Story'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5979,7 +5979,7 @@ MonoBehaviour:
   thirdPerson: {fileID: 2234119730570614820}
   Storyboard:
   - This is where the prototypes
-  - 'of the Nunemy were made. '
+  - 'of the N-Emi were made. '
   - There are 150 in here, so
   - this might take a while to complete.
   - If it helps makes thing easier,

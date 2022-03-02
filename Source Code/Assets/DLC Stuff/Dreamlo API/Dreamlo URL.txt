@@ -1,0 +1,5 @@
+This is how you can access your codes and stuff for your game. Don't tell anyone about this.
+Go to http://dreamlo.com to get your Private ID.
+We suggest you keep this .txt file OUTSIDE of your game's project folder as hackers and bad people can get this URL by decompiling your game.
+
+http://dreamlo.com/pc/3plY19Yu-Ueem185hr6fOAKW9qqzyjD0CfJ1d9TTsWoA

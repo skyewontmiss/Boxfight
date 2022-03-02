@@ -4846,7 +4846,7 @@ MonoBehaviour:
   Storyboard:
   - You destroyed the upper floor of the lab.
   - Now onto the 3rd floor.
-  - There are over 85 enemies here.
+  - There are over 85 N-Emis here.
   - as they were created at this very floor.
   - Make sure they don't get to you.
   - If you get overwhelmed, hit that
@@ -5981,7 +5981,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Nunemy Production: Development Story'
+  m_text: 'N-Emi Production: Development Story'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

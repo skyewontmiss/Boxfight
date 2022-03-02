@@ -34,23 +34,23 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if (scene.buildIndex == 3)        //this is for box forty
+        if (scene.buildIndex == 6)        //this is for box forty
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         }
-        else if (scene.buildIndex == 4)        //this is for canadia
+        else if (scene.buildIndex == 7)        //this is for canadia
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         } 
-        else if (scene.buildIndex == 5)        //this is for inlands
+        else if (scene.buildIndex == 8)        //this is for inlands
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         }
-        else if (scene.buildIndex == 6)        //this is for the stadium
+        else if (scene.buildIndex == 9)        //this is for the stadium
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         }
-        else if (scene.buildIndex == 7)        //this is for Winter Skirmish
+        else if (scene.buildIndex == 10)        //this is for Winter Skirmish
         {
             PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         }

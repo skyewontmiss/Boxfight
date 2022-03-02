@@ -18,6 +18,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Single Player Levels/The Laboratory/Lab2.unity
     guid: 36e42ed0c46c9754e829500958eadfbd
   - enabled: 1
+    path: Assets/Scenes/Single Player Levels/The Laboratory/Lab3.unity
+    guid: c207a2317dc5a64449ae333bbc7598fe
+  - enabled: 1
+    path: Assets/Scenes/Single Player Levels/The Laboratory/Lab4.unity
+    guid: 2c91eb7ccda306443ab2ab64e9640ca4
+  - enabled: 1
     path: Assets/Scenes/MultiplayerMaps/Box Fort.unity
     guid: f3f6d06fd4ff67a48aabf3b940b342f8
   - enabled: 1
