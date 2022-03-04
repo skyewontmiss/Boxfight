@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
 
 public class AchievementManager : MonoBehaviour
 {
@@ -191,5 +192,7 @@ public class AchievementManager : MonoBehaviour
             myself.SetActive(false);
         }
     }
+
+ 
 
 }

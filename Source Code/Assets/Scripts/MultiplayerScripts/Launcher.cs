@@ -38,7 +38,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     private void Awake()
     {
         instance = this;
-        Map = 3;
+        Map = 6;
         gameVersion = playerVersionWelcome.text;
     }
 

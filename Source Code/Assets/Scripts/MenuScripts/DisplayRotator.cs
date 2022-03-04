@@ -77,6 +77,8 @@ public class DisplayRotator : MonoBehaviour
         mesh.uv = UVs;
     }
 
+
+
     void OnArrowClicked(string arrow)
     {
         if (arrow == "Left Arrow")

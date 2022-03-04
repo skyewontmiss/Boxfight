@@ -89,7 +89,7 @@ public class TargetShooter : Gun
                     }
                 }
 
-                    if (Input.GetKey(KeyCode.Mouse1))
+                    if (Input.GetKey(KeyCode.Mouse1) && !FPSController)
                 {
                     if (cam.fieldOfView > cameraAimMinimum)
                     {

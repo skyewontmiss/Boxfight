@@ -19164,6 +19164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4704553326425273068}
+  - component: {fileID: 5723569948822265580}
   m_Layer: 11
   m_Name: SniperObject
   m_TagString: Untagged
@@ -19186,6 +19187,20 @@ Transform:
   m_Father: {fileID: 5412144080360031642}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5723569948822265580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6279123455662258389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd184fdc8b0920d4fb1f61ec3e51ac2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  smoothing: 2
+  sensitivity: 0
 --- !u!1 &6305738835298696386
 GameObject:
   m_ObjectHideFlags: 0
@@ -19463,7 +19478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6536294055354871837}
   m_LocalRotation: {x: -0.0015989245, y: -0, z: -0, w: 0.99999875}
-  m_LocalPosition: {x: 7.2975, y: -0.66346806, z: 0.22280657}
+  m_LocalPosition: {x: 0.04, y: -0.13, z: 2.83}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 2889265072282429571}
@@ -20487,7 +20502,7 @@ MonoBehaviour:
   myWeaponSways:
   - {fileID: 4725269692193004892}
   - {fileID: 4309998449428344839}
-  - {fileID: 0}
+  - {fileID: 5723569948822265580}
   - {fileID: 3619987535276339251}
   globalIndex: 0
   isAiming: 0
@@ -20499,9 +20514,24 @@ MonoBehaviour:
   _maximumMessages: 10
   TeamsCube: {fileID: 0}
   Textures:
+  - {fileID: 2100000, guid: 7f4687e0b26478643a915b9b9f75a74d, type: 2}
+  - {fileID: 2100000, guid: 97f1afb970061584b9ba6e2f9c01e036, type: 2}
+  - {fileID: 2100000, guid: a81218d41e2ada945af724185e05542c, type: 2}
+  - {fileID: 2100000, guid: 8bf5ab0c9af7c1846be2237932901fc8, type: 2}
+  - {fileID: 2100000, guid: f466cca60f9975b4d8633a5b251aca2e, type: 2}
+  - {fileID: 2100000, guid: c66a3cbb387047244816a1e578ac8d18, type: 2}
+  - {fileID: 2100000, guid: 71115f293b88e6143b360de09f40aa46, type: 2}
+  - {fileID: 2100000, guid: 1fbfc1ad938c2db4a856d62960b927a6, type: 2}
+  - {fileID: 2100000, guid: a8d3b0507e332364db2f960b9761de1d, type: 2}
+  - {fileID: 2100000, guid: a5a99ae5ee47ee74a86d9be18e076fbd, type: 2}
+  - {fileID: 2100000, guid: 39fb0b14140940749acb9489ed0feb91, type: 2}
+  - {fileID: 2100000, guid: e628e70882065224e97ab6334500c4c0, type: 2}
+  - {fileID: 2100000, guid: a4b4dba921c73e8418359d4b3c6abbbd, type: 2}
+  - {fileID: 2100000, guid: 0f89effefc29c6940a3b23e2cd0176ae, type: 2}
+  - {fileID: 2100000, guid: 1a4c3ee23bcb3574bac523b45421ab62, type: 2}
   - {fileID: 2100000, guid: 4c937cd14151a824c9e4eb941e49c355, type: 2}
-  - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
   - {fileID: 2100000, guid: a18aaf21e74142a42a00dd263998f9b6, type: 2}
+  - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
   fpsCounter: {fileID: 778320367296485648}
 --- !u!1 &7615723748444887064
 GameObject:

@@ -17,13 +17,26 @@ public class SkinItem : MonoBehaviour
     {
         ItemName = EditableItemName;
         ItemDescription = EditableItemDescription;
+
+
+        if(PlayerPrefs.HasKey("Skin"))
+        {
+            if (ItemID == PlayerPrefs.GetInt("Skin"))
+            {
+                GameObject displayCube = GameObject.FindGameObjectWithTag("Display Cube");
+                displayCube.GetComponent<MeshRenderer>().material = skinMaterial;
+                displayCube.GetComponent<DisplayRotator>().CreateUV();
+                
+            }
+        }
+
     }
 
     public void OnClick()
     {
         GameObject displayCube = GameObject.FindGameObjectWithTag("Display Cube");
         displayCube.GetComponent<MeshRenderer>().material = skinMaterial;
-        displayCube.GetComponent<DisplayRotator>().CreateUV();
+            displayCube.GetComponent<DisplayRotator>().CreateUV();
         GameObject.FindGameObjectWithTag("Skin Item Manager").GetComponent<SkinItemManager>().OnItemClicked(ItemID);
         PlayerPrefs.SetInt("Skin", ItemID);
         PlayerPrefs.Save();

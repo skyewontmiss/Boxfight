@@ -1,0 +1,1 @@
+Loading menu in between the lobby scene and loading a game scene.
