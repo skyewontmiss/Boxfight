@@ -16,19 +16,26 @@ public class EnemyMovement : MonoBehaviour
     public float distanceToAttack;
     public float nowdistance;
     public GameObject firstPerson, thirdPerson;
+    float time;
     // Start is called before the first frame update
 
     // Update is called once per frame
     void Update()
     {
+        time += Time.deltaTime;
         if (distanceToAttack >= nowdistance)
         {   
             nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
         } else
         {
-            //makes sure NavMeshAgent doesn't go past the nowDistance if we are too close to the player
+
             enemy.destination = player.transform.position;
+            if(time > 4)
+            {
+                int random = Random.Range(4, 10);
+                player.GetComponent<LocalController>().TakeDamage(15);
+            }
             nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
         }
