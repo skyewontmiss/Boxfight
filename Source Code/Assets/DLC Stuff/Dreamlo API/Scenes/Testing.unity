@@ -378,6 +378,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a286375deffb74482de5c12a2cbfa6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DreamloUnityToken: 
+  OKResponse: 
 --- !u!4 &598824105
 Transform:
   m_ObjectHideFlags: 0
@@ -842,7 +844,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 56a79dce7e89dca4798b6b8fbb2c7750, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eb4d01b7c6673bb4fba54d2360acbb5b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

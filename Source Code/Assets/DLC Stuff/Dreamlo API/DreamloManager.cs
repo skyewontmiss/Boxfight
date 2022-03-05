@@ -11,6 +11,27 @@ namespace DreamloAPI.Manager
         //we're going to create a singleton  of the dreamlo manager so we can access it in all of our scripts if there is an instance in our scene.
         public static DreamloManager instance;
 
+        //you get this from your private Dreamlo URL. you need to scroll down in the page and get the Unity Token reference it in the editor. 
+        public string DreamloUnityToken;
+
+        //This is the value you assigned to your key. Just input its value, the 'OK|' part is added automatically.
+        public string OKResponse;
+
+        private void Awake()
+        {
+            if (instance)
+            {
+                Destroy(gameObject);
+                return;
+            }
+            DontDestroyOnLoad(gameObject);
+            instance = this;
+        }
+
+        public void OnDestroy()
+        {
+            Destroy(this.gameObject);
+        }
 
         public void FetchDreamloCallbacks(TMP_InputField input)
         {
@@ -23,7 +44,7 @@ namespace DreamloAPI.Manager
         IEnumerator FetchCode(string code)
         {
             //this is so we can get to the dreamlo website and download our callbacks.
-            string constructedURL = "http://dreamlo.com/pc/621fa1c98f40bb12584e5fdf/redeem/" + code;
+            string constructedURL = "http://dreamlo.com/pc/" + DreamloUnityToken + "/redeem/" + code;
             string callback;
 
             UnityWebRequest www = UnityWebRequest.Get(constructedURL);
@@ -31,7 +52,7 @@ namespace DreamloAPI.Manager
 
             if (www.result != UnityWebRequest.Result.Success)
             {
-                callback = "Error|WebRequestError";
+                callback = "ERROR|UnityWebRequestError";
             }
             else
             {
@@ -59,18 +80,21 @@ namespace DreamloAPI.Manager
             if(response == "ERROR|Unknown Code")
             {
                 //means the code does not exist. We will print this to our console with an Error type of Debug.
-                Debug.LogError("The code you entered is invalid.");
+                Debug.LogError("DreamloResponse_101: The code you entered is invalid.");
 
             } else if(response == "ERROR|Code Already Used")
             {
                 //means the code exists, but has been used. We will print this to our console with a Warning type of debug.
-                Debug.LogWarning("The code you entered has been redeemed already!");
+                Debug.LogWarning("DreamloResponse_202: The code you entered has been redeemed already!");
 
-            } else if(response == "OK|CodeExample")
+            } else if(response == "OK|"+OKResponse)
             {
                 //means everything is okay! The code has not been redeemed yet, and it's valid to be used! We will print this great news to our console with a normal type of debug.
-                Debug.Log("Redeemed DLC Code!");
+                Debug.Log("DreamloResponse_303: Redeemed DLC Code!");
                 //:D
+            } else if(response == "ERROR|UnityWebRequestError")
+            {
+                Debug.LogError("UnityWebRequestERROR_1: An unknown error has occured with the UnityWebRequest services.");
             }
         }
 
