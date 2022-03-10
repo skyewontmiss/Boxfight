@@ -5,13 +5,24 @@ using UnityEngine;
 
 public class SinglePlayerWaveController : MonoBehaviour
 {
+    [Header("SPWC.WaveManager")]
     public GameObject[] Waves;
     public int waveIndex;
+    public int numberOfWaves;
     public static SinglePlayerWaveController instance;
+
+    [Header("SPWC.StoryBoardManager")]
     public Animator storyAnimator;
     public TMP_Text StoryboardText;
-    public GameObject firstPerson, thirdPerson;
     public string[] Storyboard;
+
+    [Header("SPWC.PlayerManager")]
+    public GameObject firstPerson, thirdPerson;
+    GameObject player;
+
+    [Header("SPWC.SceneLoading")]
+    public string LevelToLoad;
+    public bool isEndOfWorld;
     
 
     void Start()
@@ -22,17 +33,20 @@ public class SinglePlayerWaveController : MonoBehaviour
             {
                 Destroy(firstPerson);
                 firstPerson = null;
+                player = thirdPerson;
             }
             else if (PlayerPrefs.GetInt("Camera Mode") == 1)
             {
                 Destroy(thirdPerson);
                 thirdPerson = null;
+                player = firstPerson;
             }
 
         } else
         {
             Destroy(firstPerson);
             firstPerson = null;
+            player = thirdPerson;
         }
         waveIndex = -1;
         instance = this;
@@ -59,15 +73,25 @@ public class SinglePlayerWaveController : MonoBehaviour
         {
             if(AchievementManager.instance != null)
             {
-                AchievementManager.instance.AchievementGet("Slayer");
+                AchievementManager.instance.AchievementGet("Box Slayer");
             }
         }
-        RefreshWaves();
         waveIndex += 1;
-        if(Waves[waveIndex] == null)
+        RefreshWaves();
+
+        if(waveIndex >= numberOfWaves)
         {
-            Debug.Log("End");
+            if(isEndOfWorld)
+            {
+                player.GetComponent<LocalController>().LoadNextLevel("Menu Scene");
+
+            } else if(!isEndOfWorld)
+            {
+                player.GetComponent<LocalController>().LoadNextLevel(LevelToLoad);
+                return;
+            }
         }
+
         StartCoroutine(WaveAnnounce());
         
         Waves[waveIndex].SetActive(true);
@@ -98,6 +122,7 @@ public class SinglePlayerWaveController : MonoBehaviour
         }
         NextWave();
         storyAnimator.Play("Idle", 0, 0f);
+
 
     }
 

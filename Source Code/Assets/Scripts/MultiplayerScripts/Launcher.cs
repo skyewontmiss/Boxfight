@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 using TMPro;
 using Photon.Realtime;
 using System.Linq;
+using System.Collections;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
@@ -105,8 +106,16 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         }
 
+        StartCoroutine(LoadScene(2));
+
+    }
+
+    IEnumerator LoadScene(int sceneToLoad)
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.75f);
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(sceneToLoad);
         RoomManager.instance.OnDestroy();
     }
 
@@ -118,8 +127,15 @@ public class Launcher : MonoBehaviourPunCallbacks
 
         }
 
+        StartCoroutine(LoadScene1(sceneToSwitchTo));
+    }
+
+    IEnumerator LoadScene1(string sceneToLoad2)
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.75f);
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene(sceneToSwitchTo);
+        SceneManager.LoadScene(sceneToLoad2);
         RoomManager.instance.OnDestroy();
     }
 
@@ -215,11 +231,27 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public void StartGame()
     {
-        PhotonNetwork.LoadLevel(Map);
+        StartCoroutine(PhotonLoadYes(Map));
     }
+
+    IEnumerator PhotonLoadYes(int map)
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.78f);
+        PhotonNetwork.LoadLevel(map);
+    }
+
+
 
     public void AppQuit()
     {
+        StartCoroutine(QuitAppYes());
+    }
+
+    IEnumerator QuitAppYes()
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.78f);
         Application.Quit();
     }
 

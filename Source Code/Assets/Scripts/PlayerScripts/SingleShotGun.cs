@@ -73,6 +73,10 @@ public class SingleShotGun : Gun
         ray.origin = cam.transform.position;
         if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject != myPlayer)
         {
+            if(PlayerPrefs.GetInt("AssaultRifleShotsCount") >= 900)
+            {
+                AchievementManager.instance.AchievementGet("Rifle Enthusiast");
+            }
             crosshairAnimator.Play("ARShoot", 0, 0f);
             shotParticles.Play();
             hit.collider.gameObject.GetComponent<InteractableButton>()?.OnClicked();
@@ -80,12 +84,43 @@ public class SingleShotGun : Gun
             myGunPV.RPC("RPC_ShootWithImpacts", RpcTarget.All, hit.point, hit.normal);
             currentAmmo = currentAmmo - 1;
 
+            if (PlayerPrefs.HasKey("AssaultRifleShotsCount"))
+            {
+                PlayerPrefs.SetInt("AssaultRifleShotsCount", PlayerPrefs.GetInt("AssaultRifleShotsCount") + 1);
+                PlayerPrefs.Save();
+
+            }
+            else
+            {
+                PlayerPrefs.SetInt("AssaultRifleShotsCount", 0 + 1);
+                PlayerPrefs.Save();
+            }
+
         } else
         {
+
+            if (PlayerPrefs.GetInt("AssaultRifleShotsCount") >= 900)
+            {
+                AchievementManager.instance.AchievementGet("Rifle Enthusiast");
+            }
+
+
             crosshairAnimator.Play("ARShoot", 0, 0f);
             shotParticles.Play();
             myGunPV.RPC("RPC_ShootNoImpacts", RpcTarget.All, hit.point, hit.normal);
             currentAmmo = currentAmmo - 1;
+
+            if (PlayerPrefs.HasKey("AssaultRifleShotsCount"))
+            {
+                PlayerPrefs.SetInt("AssaultRifleShotsCount", PlayerPrefs.GetInt("AssaultRifleShotsCount") + 1);
+                PlayerPrefs.Save();
+
+            }
+            else
+            {
+                PlayerPrefs.SetInt("AssaultRifleShotsCount", 0 + 1);
+                PlayerPrefs.Save();
+            }
         }
     }
     private void Update()

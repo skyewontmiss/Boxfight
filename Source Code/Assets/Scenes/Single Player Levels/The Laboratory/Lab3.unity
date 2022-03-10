@@ -548,6 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &112373135
 Transform:
   m_ObjectHideFlags: 0
@@ -1033,6 +1034,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &252923659
 Transform:
   m_ObjectHideFlags: 0
@@ -3902,6 +3904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &726185462
 Transform:
   m_ObjectHideFlags: 0
@@ -3976,6 +3979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &727523237
 Transform:
   m_ObjectHideFlags: 0
@@ -4907,6 +4911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &870127055
 Transform:
   m_ObjectHideFlags: 0
@@ -5987,6 +5992,8 @@ MonoBehaviour:
   - don't worry. Let's just
   - hope that you get out of this
   - place alive. I believe in you.
+  numberOfWaves: 7
+  LevelToLoad: Lab4
 --- !u!4 &1128787092
 Transform:
   m_ObjectHideFlags: 0
@@ -6329,6 +6336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!4 &1195755740
 Transform:
   m_ObjectHideFlags: 0
@@ -9096,6 +9104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a76588553586c9e40b0cd059cc990c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemies: 0
 --- !u!1001 &1646082367
 PrefabInstance:
   m_ObjectHideFlags: 0

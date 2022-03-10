@@ -80,6 +80,7 @@ public class TargetShooter : Gun
                     if (Input.GetKey(KeyCode.Mouse1))
                     {
                         gun.transform.localPosition = Vector3.Lerp(gun.transform.localPosition, adsPos.transform.localPosition, 0.5f);
+                        
                     }
                     else
                     {
@@ -157,10 +158,17 @@ public class TargetShooter : Gun
 
     void Shoot()
     {
+        Debug.Log("Count: " + PlayerPrefs.GetInt("AssaultRifleShotsCount"));
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
         ray.origin = cam.transform.position;
         if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.gameObject != myPlayer)
         {
+            if (PlayerPrefs.GetInt("AssaultRifleShotsCount") >= 900)
+            {
+                Debug.Log("getting achievement");
+                AchievementManager.instance.AchievementGet("Rifle Enthusiast");
+            }
+
             Debug.Log("We hit an object! That object was: " + hit.collider.gameObject.name);
 
             EnemyMovement Enemy = hit.collider.gameObject.GetComponent<EnemyMovement>();
@@ -170,12 +178,44 @@ public class TargetShooter : Gun
                 Enemy.IWillDieable(damageIGive);
                 RPC_ShootWithImpacts(hit.point, hit.normal);
                 currentAmmo = currentAmmo - 1;
+
+                if(PlayerPrefs.HasKey("AssaultRifleShotsCount"))
+                {
+                    PlayerPrefs.SetInt("AssaultRifleShotsCount", PlayerPrefs.GetInt("AssaultRifleShotsCount") + 1);
+                    PlayerPrefs.Save();
+
+                } else
+                {
+                    PlayerPrefs.SetInt("AssaultRifleShotsCount", 0 + 1);
+                    PlayerPrefs.Save();
+                }
+                
+
             }
             else
             {
+
+                if (PlayerPrefs.GetInt("AssaultRifleShotsCount") >= 900)
+                {
+   
+                    AchievementManager.instance.AchievementGet("Rifle Enthusiast");
+                }
+
                 crosshairAnimator.Play("ARShoot", 0, 0f);
                 RPC_ShootNoImpacts(hit.point, hit.normal);
                 currentAmmo = currentAmmo - 1;
+
+                if (PlayerPrefs.HasKey("AssaultRifleShotsCount"))
+                {
+                    PlayerPrefs.SetInt("AssaultRifleShotsCount", PlayerPrefs.GetInt("AssaultRifleShotsCount") + 1);
+                    PlayerPrefs.Save();
+
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("AssaultRifleShotsCount", 0 + 1);
+                    PlayerPrefs.Save();
+                }
             }
         }
     }

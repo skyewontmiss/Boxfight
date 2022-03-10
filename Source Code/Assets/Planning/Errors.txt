@@ -1,4 +1,3 @@
-- sniper is absurdly huge in Third Person Mode
 - XP bar is sized differently on different resolutions
 - Quit button does not quit the game
-- Pause menu keeps showing up if you click 'Enter' or 'Space' after you open it in single player. Does this happen in multiplayer as well?
+- 

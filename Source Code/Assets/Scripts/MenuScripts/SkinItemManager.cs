@@ -8,6 +8,8 @@ public class SkinItemManager : MonoBehaviour
 {
     SkinItem[] skinItems;
     public TMP_Text itemNameText, itemDescriptionText;
+    public int ItemIDRN;
+    public GameObject applyButton;
 
     void Start()
     {
@@ -44,11 +46,23 @@ public class SkinItemManager : MonoBehaviour
             if (skinItems[i].ItemID == itemID)
             {
                 itemNameText.text = skinItems[i].ItemName;
+                if(skinItems[i].isDLCItem)
+                {
+                    itemNameText.text = itemNameText.text + " | <color=#FF3087>I<color=#34CEF7>X <color=#30F3DC>DLC</color> <color=#FFE800>Exclusive </color>";
+
+                } else
+                {
+                    itemNameText.text = itemNameText.text;
+                }
+
                 itemDescriptionText.text = skinItems[i].ItemDescription;
                 break;
             }
         }
     }
+
+
+
 
     // Update is called once per frame
     void Update()

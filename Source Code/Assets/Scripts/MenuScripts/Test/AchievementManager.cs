@@ -190,6 +190,25 @@ public class AchievementManager : MonoBehaviour
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1.75f);
             myself.SetActive(false);
+
+        } else if (achievementName == "Rifle Enthusiast")
+        {
+            foreach (string line in lines)
+            {
+                if (line == "Rifle Enthusiast")
+                {
+                    //ends all the code
+                    yield break;
+                }
+            }
+            File.AppendAllText(FilePath, "Rifle Enthusiast");
+            achievementNameText.text = "Rifle Enthusiast";
+            achievementDescriptionText.text = "Shoot your Assault Rifle 900 times.";
+            myself.SetActive(true);
+            yield return new WaitForSeconds(4f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1.75f);
+            myself.SetActive(false);
         }
     }
 

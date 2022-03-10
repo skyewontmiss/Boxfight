@@ -19,7 +19,7 @@ public class LocalController : MonoBehaviour
     [SerializeField] Animator pauseMenuAnimator, hitAnimator;
     GameObject postProcessing;
     [SerializeField] Camera myCamera;
-    bool animating;
+    public bool animating;
 
 
 
@@ -33,7 +33,7 @@ public class LocalController : MonoBehaviour
     int itemIndex;
     [SerializeField] [HideInInspector] public int globalIndex;
 
-    [HideInInspector] [SerializeField] public bool isAiming, paused;
+    [SerializeField] public bool isAiming, paused;
     int previousItemIndex = -1;
 
     float verticalLookRotation;
@@ -342,7 +342,7 @@ public class LocalController : MonoBehaviour
     public void LeaveMatch()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(0);
+        StartCoroutine(LoadSceney("Menu Scene"));
     }
 
     void EquipItem(int _index)
@@ -375,7 +375,6 @@ public class LocalController : MonoBehaviour
             {
                 if (paused)
                 {
-                    Time.timeScale = 1;
                     StartCoroutine(CloseMenu());
                 }
                 else if (!paused)
@@ -389,7 +388,14 @@ public class LocalController : MonoBehaviour
 
     public void LoadScene(string Scene)
     {
-        SceneManager.LoadScene(Scene);
+        StartCoroutine(LoadSceney(Scene));
+    }
+
+    IEnumerator LoadSceney(string datScene)
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.75f);
+        SceneManager.LoadScene(datScene);
     }
 
 
@@ -402,19 +408,20 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         animating = false;
         paused = true;
-        Time.timeScale = 0;
+        Time.timeScale = 0.04f;
     }
 
     IEnumerator CloseMenu()
     {
         animating = true;
         pauseMenuAnimator.Play("PauseMenuClose", 0, 0f);
+        yield return new WaitForSeconds(2f);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        yield return new WaitForSeconds(0.5f);
         animating = false;
         paused = false;
         Time.timeScale = 1;
+        
     }
 
 
@@ -458,8 +465,19 @@ public class LocalController : MonoBehaviour
     public void Die()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        StartCoroutine(LoadSceneyy());
+    }
 
+    IEnumerator LoadSceneyy()
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.75f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void LoadNextLevel(string levelToLoad)
+    {
+        StartCoroutine(LoadSceney(levelToLoad)); 
     }
 
 }

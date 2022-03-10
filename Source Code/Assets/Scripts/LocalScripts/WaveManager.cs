@@ -4,30 +4,45 @@ using UnityEngine;
 
 public class WaveManager : MonoBehaviour
 {
-    GameObject[] enemysInMyWave;
-    int enemies;
+    EnemyMovement[] enemysInMyWave;
+    public int enemies;
 
     private void Awake()
     {
-        enemysInMyWave = GameObject.FindGameObjectsWithTag("Single Player Enemy");
+        enemysInMyWave = this.gameObject.GetComponentsInChildren<EnemyMovement>();
         enemies = enemysInMyWave.Length;
     }
 
     public void RemoveEnemy()
     {
-        if(enemies > 1)
+        if(enemies > 0)
         {
             enemies = enemies - 1;
-            XPManager.instance.AddXP(30);
-            if(enemies == 0)
+
+            if (enemies == 0)
             {
                 Debug.Log("End of wave!");
                 SinglePlayerWaveController.instance.NextWave();
             }
-        } else
+
+
+
+            if (XPManager.instance != null)
+            {
+                XPManager.instance.AddXP(30);
+            }
+
+
+
+        }
+        else if (enemies == 0)
         {
             Debug.Log("End of wave!");
             SinglePlayerWaveController.instance.NextWave();
+
+        } else
+        {
+
         }
     }
 

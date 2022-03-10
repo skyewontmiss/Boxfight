@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,20 @@ public class SceneAndURLLoader : MonoBehaviour
 
     private void Awake ()
     {
-}
+
+	} 
 
 
 
     public void SceneLoad(string sceneName)
 	{
+		StartCoroutine(LoadScene1(sceneName));
+	}
+
+	IEnumerator LoadScene1(string sceneName)
+    {
+		TransitionManager.instance.Close();
+		yield return new WaitForSeconds(0.75f);
 		SceneManager.LoadScene(sceneName);
 	}
 

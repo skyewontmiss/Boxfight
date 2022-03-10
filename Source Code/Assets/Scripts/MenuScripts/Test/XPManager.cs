@@ -94,19 +94,19 @@ public class XPManager : MonoBehaviour
 
     public  void OnEnable()
     {
-        Debug.Log("OnEnableCalled");
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public  void OnDisable()
     {
-        Debug.Log("OnDisableCalled");
+
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        Debug.Log("OnSceneLoadedCalled");
+
         if (SceneManager.GetActiveScene().buildIndex == 0)
         {
             transformR = GameObject.FindGameObjectWithTag("MenuMain").GetComponent<RectTransform>();

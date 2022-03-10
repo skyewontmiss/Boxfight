@@ -26,16 +26,17 @@ public class EnemyMovement : MonoBehaviour
         if (distanceToAttack >= nowdistance)
         {   
             nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
+            if (time > 4)
+            {
+                int random = Random.Range(1, 4);
+                player.GetComponent<LocalController>().TakeDamage(random);
+                time = 0;
+            }
 
         } else
         {
 
             enemy.destination = player.transform.position;
-            if(time > 4)
-            {
-                int random = Random.Range(4, 10);
-                player.GetComponent<LocalController>().TakeDamage(15);
-            }
             nowdistance = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
 
         }
@@ -46,6 +47,8 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
      {
+        int startTime = Random.Range(0, 6);
+        time = startTime;
 
         health = maxHealth;
         parent = transform.parent.GetComponent<WaveManager>();

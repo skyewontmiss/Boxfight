@@ -432,6 +432,13 @@ public class PlayerController : MonoBehaviourPunCallbacks, IDamageable
 
     public void LeaveMatch()
     {
+        StartCoroutine(LoadScene());
+    }
+
+    IEnumerator LoadScene()
+    {
+        TransitionManager.instance.Close();
+        yield return new WaitForSeconds(0.75f);
         PhotonNetwork.LeaveRoom();
         PhotonNetwork.Disconnect();
         SceneManager.LoadScene(0);
