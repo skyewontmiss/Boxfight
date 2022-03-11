@@ -207,47 +207,59 @@ public class XPManager : MonoBehaviour
 
     IEnumerator Animate()
     {
-        if (playerLevel > 0 && playerLevel < 5)
+        if (playerLevel > 0 && playerLevel < 10)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[0];
         }
-        else if (playerLevel > 4 && playerLevel < 10)
+        else if (playerLevel > 9 && playerLevel < 20)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[1];
         }
-        else if (playerLevel > 9 && playerLevel < 15)
+        else if (playerLevel > 19 && playerLevel < 30)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[2];
         }
-        else if (playerLevel > 14 && playerLevel < 20)
+        else if (playerLevel > 29 && playerLevel < 40)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[3];
         }
-        else if (playerLevel > 19 && playerLevel < 25)
+        else if (playerLevel > 39 && playerLevel < 50)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[4];
         }
-        else if (playerLevel > 24 && playerLevel < 30)
+        else if (playerLevel > 49 && playerLevel < 75)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[5];
         }
-        else if (playerLevel > 29 && playerLevel < 35)
+        else if (playerLevel > 74 && playerLevel < 100)
         {
             levelImageAnimator.Play("nextLevel");
             yield return new WaitForSeconds(0.30f);
             level.sprite = levelImages[6];
+        }
+        else if (playerLevel > 99 && playerLevel < 150)
+        {
+            levelImageAnimator.Play("nextLevel");
+            yield return new WaitForSeconds(0.30f);
+            level.sprite = levelImages[7];
+        }
+        else if (playerLevel > 149 && playerLevel < 200)
+        {
+            levelImageAnimator.Play("nextLevel");
+            yield return new WaitForSeconds(0.30f);
+            level.sprite = levelImages[8];
         }
     }
 

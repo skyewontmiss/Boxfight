@@ -56,37 +56,38 @@ public class AchievementManager : MonoBehaviour
         if (File.Exists(FilePath))
         {
             lines = File.ReadAllLines(FilePath);
+            GameObject[] AchievementItems = GameObject.FindGameObjectsWithTag("Achievement Item");
 
-        }
-        else
-        {
-            File.Create(FilePath);
-            lines = File.ReadAllLines(FilePath);
-        }
-
-        GameObject[] AchievementItems = GameObject.FindGameObjectsWithTag("Achievement Item");
-
-        foreach (GameObject achievement in AchievementItems)
-        {
-            Image image = achievement.GetComponent<Image>();
-            
-
-            foreach (string line in lines)
+            foreach (GameObject achievement in AchievementItems)
             {
-                if (line == achievement.name)
+                Image image = achievement.GetComponent<Image>();
+
+
+                foreach (string line in lines)
                 {
-                    //ends all the code
-                    image.color = new Color(0, 255, 0);
-                    currentAchievements = currentAchievements + 1;
-                } else
-                {
-                    
+                    if (line == achievement.name)
+                    {
+                        //ends all the code
+                        image.color = new Color(0, 255, 0);
+                        currentAchievements = currentAchievements + 1;
+                    }
+                    else
+                    {
+
+                    }
                 }
+
+
+
             }
 
-
-
         }
+        else if (!File.Exists(FilePath))
+        {
+            File.Create(FilePath);
+            currentAchievements = 0;
+        }
+
 
         GameObject completionObject = GameObject.Find("Completion");
 
@@ -96,7 +97,7 @@ public class AchievementManager : MonoBehaviour
     // Update is called once per frame
     public void AchievementGet(string achievementName)
     {
-        StartCoroutine(AchievementAnimate("Box Slayer"));
+        StartCoroutine(AchievementAnimate(achievementName));
     }
 
     IEnumerator AchievementAnimate (string achievementName)
@@ -124,13 +125,13 @@ public class AchievementManager : MonoBehaviour
                     yield break;
                 }
             }
-            File.AppendAllText(FilePath, "Box Slayer");
+            File.AppendAllText(FilePath, "\nBox Slayer");
             achievementNameText.text = "Box Slayer";
             achievementDescriptionText.text = "Complete a full wave of the Single Player Campaign. No sweat.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(1f);
             myself.SetActive(false);
 
         }
@@ -144,13 +145,13 @@ public class AchievementManager : MonoBehaviour
                     yield break;
                 }
             }
-            File.AppendAllText(FilePath, "The First");
+            File.AppendAllText(FilePath, "\nThe First");
             achievementNameText.text = "The First";
             achievementDescriptionText.text = "Join into your first multiplayer lobby. Welcome to Boxfight!";
             myself.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(1f);
             myself.SetActive(false);
 
         } else if(achievementName == "Skill Issue")
@@ -163,13 +164,13 @@ public class AchievementManager : MonoBehaviour
                     yield break;
                 }
             }
-            File.AppendAllText(FilePath, "Skill Issue");
+            File.AppendAllText(FilePath, "\nSkill Issue");
             achievementNameText.text = "Skill Issue";
             achievementDescriptionText.text = "Die from a player for the first time in multiplayer. Your terrible at this.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(1f);
             myself.SetActive(false);
 
         } else if(achievementName == "Rule the World...")
@@ -182,13 +183,13 @@ public class AchievementManager : MonoBehaviour
                     yield break;
                 }
             }
-            File.AppendAllText(FilePath, "Rule the World...");
+            File.AppendAllText(FilePath, "\nRule the World...");
             achievementNameText.text = "Rule the World...";
             achievementDescriptionText.text = "...maybe not. Your first by falling out of the world? Lol. Newb.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(1f);
             myself.SetActive(false);
 
         } else if (achievementName == "Rifle Enthusiast")
@@ -201,14 +202,75 @@ public class AchievementManager : MonoBehaviour
                     yield break;
                 }
             }
-            File.AppendAllText(FilePath, "Rifle Enthusiast");
+            File.AppendAllText(FilePath, "\nRifle Enthusiast");
             achievementNameText.text = "Rifle Enthusiast";
             achievementDescriptionText.text = "Shoot your Assault Rifle 900 times.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
-            yield return new WaitForSeconds(1.75f);
+            yield return new WaitForSeconds(1f);
             myself.SetActive(false);
+
+        }
+        else if (achievementName == "The Regular")
+        {
+            foreach (string line in lines)
+            {
+                if (line == "The Regular")
+                {
+                    //ends all the code
+                    yield break;
+                }
+            }
+            File.AppendAllText(FilePath, "\nThe Regular");
+            achievementNameText.text = "The Regular";
+            achievementDescriptionText.text = "Join 100 lobbies of Boxfight.";
+            myself.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1f);
+            myself.SetActive(false);
+
+        }
+        else if (achievementName == "The Professional")
+        {
+            foreach (string line in lines)
+            {
+                if (line == "The Professional")
+                {
+                    //ends all the code
+                    yield break;
+                }
+            }
+            File.AppendAllText(FilePath, "\nThe Professional");
+            achievementNameText.text = "The Professional";
+            achievementDescriptionText.text = "Join 500 lobbies of Boxfight.";
+            myself.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1f);
+            myself.SetActive(false);
+
+        }
+        else if (achievementName == "The Donator")
+        {
+            foreach (string line in lines)
+            {
+                if (line == "The Donator")
+                {
+                    //ends all the code
+                    yield break;
+                }
+            }
+            File.AppendAllText(FilePath, "\nThe Donator");
+            achievementNameText.text = "The Donator";
+            achievementDescriptionText.text = "Donate money to the developer. (This isn't possible so don't bother trying...!)";
+            myself.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1f);
+            myself.SetActive(false);
+
         }
     }
 
