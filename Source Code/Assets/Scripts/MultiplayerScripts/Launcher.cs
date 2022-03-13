@@ -175,6 +175,9 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         MenuManager.Instance.OpenMenu("Room Menu");
+
+
+
         roomNameText.text = PhotonNetwork.CurrentRoom.Name;
 
         Player[] players = PhotonNetwork.PlayerList;
@@ -214,6 +217,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         PhotonNetwork.LeaveRoom();
         MenuManager.Instance.OpenMenu("Loading");
     }
+
 
     public override void OnLeftRoom()
     {
@@ -270,6 +274,12 @@ public class Launcher : MonoBehaviourPunCallbacks
                 Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().Setup(roomList[i]);
             }
         }
+    }
+
+    public void UnfinishedSecret(TMP_Text text)
+    {
+        AchievementManager.instance.AchievementGet("Unfinished Secret");
+        text.text = "Unfinished Secret...";
     }
 
 

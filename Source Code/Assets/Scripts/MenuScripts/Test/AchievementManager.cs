@@ -272,6 +272,26 @@ public class AchievementManager : MonoBehaviour
             myself.SetActive(false);
 
         }
+        else if (achievementName == "Unfinished Secret")
+        {
+            foreach (string line in lines)
+            {
+                if (line == "Unfinished Secret")
+                {
+                    //ends all the code
+                    yield break;
+                }
+            }
+            File.AppendAllText(FilePath, "\nUnfinished Secret");
+            achievementNameText.text = "Unfinished Secret";
+            achievementDescriptionText.text = "Click the menu title. Something's coming soon to it.";
+            myself.SetActive(true);
+            yield return new WaitForSeconds(1f);
+            myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
+            yield return new WaitForSeconds(1f);
+            myself.SetActive(false);
+
+        }
     }
 
  

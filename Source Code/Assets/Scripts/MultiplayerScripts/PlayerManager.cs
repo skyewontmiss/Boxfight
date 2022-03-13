@@ -36,6 +36,28 @@ public class PlayerManager : MonoBehaviour
     {
         if (PV.IsMine)
         {
+            if (PlayerPrefs.HasKey("Lobbies Joined"))
+            {
+                PlayerPrefs.SetInt("Lobbies Joined", PlayerPrefs.GetInt("Lobbies Joined") + 1);
+                PlayerPrefs.Save();
+
+            }
+            else
+            {
+                PlayerPrefs.SetInt("Lobbies Joined", 0 + 1);
+                PlayerPrefs.Save();
+            }
+
+            if (PlayerPrefs.GetInt("Lobbies Joined") >= 100)
+            {
+                AchievementManager.instance.AchievementGet("The Regular");
+            }
+
+            if (PlayerPrefs.GetInt("Lobbies Joined") >= 500)
+            {
+                AchievementManager.instance.AchievementGet("The Professional");
+            }
+
             CreateController();
         }
     }

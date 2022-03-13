@@ -15,6 +15,7 @@ public class SinglePlayerWaveController : MonoBehaviour
     public Animator storyAnimator;
     public TMP_Text StoryboardText;
     public string[] Storyboard;
+    public string[] endOfWorldStoryboard;
 
     [Header("SPWC.PlayerManager")]
     public GameObject firstPerson, thirdPerson;
@@ -83,7 +84,10 @@ public class SinglePlayerWaveController : MonoBehaviour
         {
             if(isEndOfWorld)
             {
-                player.GetComponent<LocalController>().LoadNextLevel("Menu Scene");
+                storyAnimator.Play("Popup", 0, 0f);
+                StoryboardText.text = "You finished them all!";
+                StartCoroutine(EndOfWorldStory());
+                return;
 
             } else if(!isEndOfWorld)
             {
@@ -131,6 +135,27 @@ public class SinglePlayerWaveController : MonoBehaviour
         while (!Input.GetKeyDown(keyCode))
             yield return null;
     }
+
+    IEnumerator EndOfWorldStory()
+    {
+
+        yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+
+        foreach (string Str in endOfWorldStoryboard)
+        {
+            yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+            storyAnimator.Play("Popup", 0, 0f);
+            StoryboardText.text = Str;
+            yield return StartCoroutine(WaitForKeyDown(KeyCode.Return));
+
+        }
+        player.GetComponent<LocalController>().LoadNextLevel("Menu Scene");
+
+        storyAnimator.Play("Idle", 0, 0f);
+
+
+    }
+
 
     #endregion
 

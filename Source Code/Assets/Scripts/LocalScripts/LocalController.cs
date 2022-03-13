@@ -388,6 +388,7 @@ public class LocalController : MonoBehaviour
 
     public void LoadScene(string Scene)
     {
+        Time.timeScale = 1;
         StartCoroutine(LoadSceney(Scene));
     }
 
@@ -408,7 +409,7 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         animating = false;
         paused = true;
-        Time.timeScale = 0.04f;
+        Time.timeScale = 0f;
     }
 
     IEnumerator CloseMenu()
