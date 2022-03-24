@@ -129,7 +129,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "Box Slayer";
             achievementDescriptionText.text = "Complete a full wave of the Single Player Campaign. No sweat.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -149,7 +149,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "The First";
             achievementDescriptionText.text = "Join into your first multiplayer lobby. Welcome to Boxfight!";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -168,7 +168,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "Skill Issue";
             achievementDescriptionText.text = "Die from a player for the first time in multiplayer. Your terrible at this.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -187,7 +187,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "Rule the World...";
             achievementDescriptionText.text = "...maybe not. Your first by falling out of the world? Lol. Newb.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -206,7 +206,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "Rifle Enthusiast";
             achievementDescriptionText.text = "Shoot your Assault Rifle 900 times.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -226,7 +226,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "The Regular";
             achievementDescriptionText.text = "Join 100 lobbies of Boxfight.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -246,7 +246,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "The Professional";
             achievementDescriptionText.text = "Join 500 lobbies of Boxfight.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -266,7 +266,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "The Donator";
             achievementDescriptionText.text = "Donate money to the developer. (This isn't possible so don't bother trying...!)";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);
@@ -286,7 +286,7 @@ public class AchievementManager : MonoBehaviour
             achievementNameText.text = "Unfinished Secret";
             achievementDescriptionText.text = "Click the menu title. Something's coming soon to it.";
             myself.SetActive(true);
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(3f);
             myself.GetComponent<Animator>().Play("achievementEscape", 0, 0f);
             yield return new WaitForSeconds(1f);
             myself.SetActive(false);

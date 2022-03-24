@@ -20,6 +20,7 @@ public class LocalController : MonoBehaviour
     GameObject postProcessing;
     [SerializeField] Camera myCamera;
     public bool animating;
+    public PlayerGroundCheck playerGroundCheck;
 
 
 

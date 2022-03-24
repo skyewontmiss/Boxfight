@@ -7,24 +7,35 @@ using TMPro;
 using Photon.Realtime;
 using System.Linq;
 using System.Collections;
+using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 public class Launcher : MonoBehaviourPunCallbacks
 {
+    [Header("UI Management")]
     public Button MultiplayerButton, errorReturnButton;
     public GameObject ConnectionObject;
+
+    [Header("Creating Rooms & Finding Rooms")]
     [SerializeField] TMP_InputField roomNameInputField;
     public TMP_Text errorText;
+    public GameObject FindRoomMenu;
+    public GameObject CreateRoomMenu;
+
+    [Header("Room Menu Stuff")]
     [SerializeField] TMP_Text roomNameText;
     [SerializeField] Transform roomListContent;
     [SerializeField] Transform playerListContent;
     [SerializeField] GameObject roomListItemPrefab;
     [SerializeField] GameObject playerListItemPrefab;
-    public GameObject FindRoomMenu;
-    public GameObject CreateRoomMenu;
+
+    [Header("Host Stuff")]
     [SerializeField] GameObject[] hostControls;
+
+    [Header("Miscallenous")]
     [SerializeField] Animator animatedPanelSceneSwitcher;
     [SerializeField] TMP_Text playerCount;
     [SerializeField] TMP_Text playerVersionWelcome;
+    PhotonView PV;
 
     //for festivity
     [SerializeField] public Image[] ChristmasTrees;
@@ -41,6 +52,7 @@ public class Launcher : MonoBehaviourPunCallbacks
         instance = this;
         Map = 6;
         gameVersion = playerVersionWelcome.text;
+        PV = GetComponent<PhotonView>();
     }
 
      void Start()
@@ -60,6 +72,7 @@ public class Launcher : MonoBehaviourPunCallbacks
     {
         playerCount.text = "Players online: " + "\n" + PhotonNetwork.CountOfPlayers;
     }
+
 
     public override void OnConnectedToMaster()
     {
@@ -243,7 +256,11 @@ public class Launcher : MonoBehaviourPunCallbacks
         TransitionManager.instance.Close();
         yield return new WaitForSeconds(0.78f);
         PhotonNetwork.LoadLevel(map);
+
     }
+
+
+    
 
 
 
@@ -290,9 +307,68 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     //a type of menu room kick system. I think.
 
+    //nope, it's a gameMode system.
+    [Header("Gamemode System")]
+    public Animator gameModeAnimator;
+    public TMP_Text lobbyTypeText;
+
+    public void OnRoomSettingsWanted()
+    {
+        gameModeAnimator.Play("RoomOptions");
+    }
+
+    public void OnMainContentWanted()
+    {
+        gameModeAnimator.Play("MainContent");
+    }
+
+    public void ToggleManhuntLobby(Toggle toggle)
+    {
+        if(toggle.isOn)
+        {
+            SetGamemode("True");
+
+        } else
+        {
+            SetGamemode("False");
+        }
+    }
+
+    void SetGamemode(string isTrueOrFalse)
+    {
+        if (PV.IsMine)
+        {
+            Hashtable gamemode = new Hashtable();
+            gamemode.Add("Is Manhunt Lobby", isTrueOrFalse);
+            PhotonNetwork.LocalPlayer.SetCustomProperties(gamemode);
+            Debug.Log((string)gamemode["Is Manhunt Lobby"]);
+        }
+    }
+
+    public override void OnPlayerPropertiesUpdate(Player targetPlayer, Hashtable changedProps)
+    {
+
+            if((string)changedProps["Is Manhunt Lobby"] == "True")
+            {
+                lobbyTypeText.text = "This is a Manhunt lobby";
+
+            }
+            else if ((string)changedProps["Is Manhunt Lobby"] == "False")
+            {
+                lobbyTypeText.text = "This is a normal lobby";
+
+            } else
+            {
+                Debug.LogWarning("A player property has changed, but we can't get it.");
+            }
+
+    }
 
 
-    
+
+
+
+
 
 
 
