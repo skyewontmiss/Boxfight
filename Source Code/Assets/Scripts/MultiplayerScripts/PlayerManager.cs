@@ -130,7 +130,6 @@ public class PlayerManager : MonoBehaviour
 
     IEnumerator DieCoroutine()
     {
-
         PhotonNetwork.Destroy(controller);
         CreateSpectator();
         yield return new WaitForSeconds(5.4f);

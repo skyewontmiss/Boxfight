@@ -36,20 +36,25 @@ public class CustomStuff : MonoBehaviour
     {
         SnowMaterial.mainTexture = AtStart;
 
+
         if (PlayerPrefs.HasKey("Custom Path"))
         {
-            inputFieldPath = PlayerPrefs.GetString("Custom Path");
+            if(Directory.Exists(PlayerPrefs.GetString("Custom Path")))
+            {
+                inputFieldPath = PlayerPrefs.GetString("Custom Path");
+            }
 
         } else
         {
             //end function
-            inputFieldPath = "";
+
         }
         foreach (GameObject customMenu in customMenus)
         {
             customMenu.SetActive(false);
         }
 
+        Debug.Log(inputFieldPath);
         RefreshMenus();
     } 
 
@@ -60,13 +65,13 @@ public class CustomStuff : MonoBehaviour
 
     public void Setup()
     {
-        Directory.CreateDirectory(PlayerPrefs.GetString("Custom Path") + "/Custom Stuff");
+        Directory.CreateDirectory(inputFieldPath + "/Custom Stuff");
         RefreshMenus();
     }
 
     public void SetupSpecific(string WhatToSetUp)
     {
-        Directory.CreateDirectory(PlayerPrefs.GetString("Custom Path") + "/Custom Stuff/"  + WhatToSetUp);
+        Directory.CreateDirectory(inputFieldPath + "/Custom Stuff/"  + WhatToSetUp);
         RefreshMenus();
         foreach (GameObject customMenu in customMenus)
         {
@@ -143,7 +148,7 @@ public class CustomStuff : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        imagePath = Application.dataPath + "/Custom Stuff/Custom Menu Backgrounds";
+        imagePath = inputFieldPath + "/Custom Stuff/Custom Menu Backgrounds";
         DirectoryInfo dir = new DirectoryInfo(imagePath);
         info = dir.GetFiles("*.*");
 
@@ -169,8 +174,8 @@ public class CustomStuff : MonoBehaviour
             {
                 GameObject.Destroy(child.gameObject);
             }
-            imagePath = Application.dataPath + "/Custom Stuff/Custom Snow Particles";
-            DirectoryInfo dir = new DirectoryInfo(imagePath);
+            imagePath = inputFieldPath + "/Custom Stuff/Custom Snow Particles";
+        DirectoryInfo dir = new DirectoryInfo(imagePath);
             info = dir.GetFiles("*.*");
 
             foreach (FileInfo f in info)

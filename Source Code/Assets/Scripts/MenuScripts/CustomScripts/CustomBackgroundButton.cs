@@ -32,7 +32,7 @@ public class CustomBackgroundButton : MonoBehaviour
 
     IEnumerator LoadImage(string imageNameWithExtension)
     {
-        string url = Application.dataPath + "/Custom Stuff/Custom Menu Backgrounds/" + imageNameWithExtension;
+        string url = PlayerPrefs.GetString("Custom Path") + "/Custom Stuff/Custom Menu Backgrounds/" + imageNameWithExtension;
 
         byte[] imgData;
         Texture2D tex = new Texture2D(2, 2);
@@ -65,7 +65,7 @@ public class CustomBackgroundButton : MonoBehaviour
 
     IEnumerator LoadSnowImage(string imageNameWithExtension)
     {
-        string url = Application.dataPath + "/Custom Stuff/Custom Snow Particles/" + imageNameWithExtension;
+        string url = PlayerPrefs.GetString("Custom Path") + "/Custom Stuff/Custom Snow Particles/" + imageNameWithExtension;
 
         byte[] imgData;
         Texture2D tex = new Texture2D(2, 2);

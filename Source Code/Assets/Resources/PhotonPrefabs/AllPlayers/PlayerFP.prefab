@@ -20303,6 +20303,7 @@ GameObject:
   - component: {fileID: 1631681333095038863}
   - component: {fileID: 7681500950888582362}
   - component: {fileID: 2582675061850795816}
+  - component: {fileID: 6719668559097439650}
   m_Layer: 0
   m_Name: PlayerFP
   m_TagString: Game Player
@@ -20533,6 +20534,25 @@ MonoBehaviour:
   - {fileID: 2100000, guid: a18aaf21e74142a42a00dd263998f9b6, type: 2}
   - {fileID: 2100000, guid: 2505865e230c39244a02a9aa2b81d5eb, type: 2}
   fpsCounter: {fileID: 778320367296485648}
+--- !u!95 &6719668559097439650
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7530951419458595931}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00eace01776907647bb7745138087d3f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7615723748444887064
 GameObject:
   m_ObjectHideFlags: 0

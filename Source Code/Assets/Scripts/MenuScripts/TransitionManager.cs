@@ -35,6 +35,7 @@ public class TransitionManager : MonoBehaviour
     public void Close()
     {
         animator.Play("Close");
+ 
     }
 
 
@@ -44,7 +45,10 @@ public class TransitionManager : MonoBehaviour
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         animator.Play("Open");
+
     }
+
+
 
     // called third
     void Start()
