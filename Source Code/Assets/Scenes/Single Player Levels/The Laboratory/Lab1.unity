@@ -4023,6 +4023,7 @@ MonoBehaviour:
   - Boxfight universe to get them.
   - Me and the rest of the team wish
   - you luck. Be safe out there.
+  endOfWorldStoryboard: []
   firstPerson: {fileID: 169042389}
   thirdPerson: {fileID: 2234119730570614820}
   LevelToLoad: Lab2

@@ -376,11 +376,12 @@ public class LocalController : MonoBehaviour
             {
                 if (paused)
                 {
+                    Time.timeScale = 0f;
                     StartCoroutine(CloseMenu());
                 }
                 else if (!paused)
                 {
-
+                    Time.timeScale = 1f;
                     StartCoroutine(OpenMenu());
                 }
             }
@@ -389,7 +390,7 @@ public class LocalController : MonoBehaviour
 
     public void LoadScene(string Scene)
     {
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         StartCoroutine(LoadSceney(Scene));
     }
 
@@ -422,7 +423,7 @@ public class LocalController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         animating = false;
         paused = false;
-        Time.timeScale = 1;
+        Time.timeScale = 1f;
         
     }
 
